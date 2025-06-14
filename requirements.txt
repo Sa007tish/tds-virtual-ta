@@ -1,0 +1,10 @@
+fastapi
+uvicorn
+openai
+numpy
+pillow
+pytesseract
+tiktoken
+markdownify
+beautifulsoup4
+requests

@@ -1508,7 +1508,7 @@
     }
   },
   {
-    "text": "@Jivraj\n@Saransh_Saini\nI have similar concern\nFor Q1, I used the following code:\nprint\n(\nf'Pearson correlation for Karnataka between price retention and column'\n)\nkk = df[df[\n'State'\n] ==\n'Karnataka'\n]\nfor\ncol\nin\n[\n'Mileage (km/l)'\n,\n'Avg Daily Distance (km)'\n,\n'Engine Capacity (cc)'\n]:\n    pearson_corr = kk[",
+    "text": "@Jivraj\n@Saransh_Saini\nI have similar concern\nFor Q1, I used the following code:\nprint\n(\nf'Pearson correlation for Karnataka between price retention and column'\n)\nkk = df[df[\n'State'\n] ==\n'Karnataka'\n]\nfor\ncol\nin\n[\n'Mileage (km/l)'\n,\n'Avg Daily Distance (km)'\n,\n'Engine Capacity (cc)'\n]:\npearson_corr = kk[\n'price_retention'",
     "source": "https://discourse.onlinedegree.iitm.ac.in/t/graded-assignment-6/169283/4",
     "type": "discourse",
     "meta": {
@@ -1521,7 +1521,7 @@
     }
   },
   {
-    "text": "'price_retention'\n].corr(kk[col])\nprint\n(\nf'\\t\n{col:\n25\n}\n:\n{pearson_corr:\n.2\nf}\n'\n)\nAnd got the following output:\nPearson correlation\nfor\nKarnataka between price retention and column\nMileage\n(km/l)\n:\n0.03\nAvg Daily\nDistance\n(km)\n: -\n0.06\nEngine\nCapacity\n(cc)\n: -\n0.04\nWhereas options are below where none of them are correct.\nimage",
+    "text": "].corr(kk[col])\nprint\n(\nf'\\t\n{col:\n25\n}\n:\n{pearson_corr:\n.2\nf}\n'\n)\nAnd got the following output:\nPearson correlation\nfor\nKarnataka between price retention and column\nMileage\n(km/l)\n:\n0.03\nAvg Daily\nDistance\n(km)\n: -\n0.06\nEngine\nCapacity\n(cc)\n: -\n0.04\nWhereas options are below where none of them are correct.\nimage\n281\u00d7219 9.1 KB",
     "source": "https://discourse.onlinedegree.iitm.ac.in/t/graded-assignment-6/169283/4",
     "type": "discourse",
     "meta": {
@@ -1534,7 +1534,7 @@
     }
   },
   {
-    "text": "281\u00d7219 9.1 KB\nWhereas for Q2 (Punjab and Yamaha) I used the following code:\nprint\n(\nf'Pearson correlation for Punjab and Yamaha between price retention and column'\n)\npb = df[(df[\n'State'\n] ==\n'Punjab'\n) & (df[\n'Brand'\n] ==\n'Yamaha'\n)]\nfor\ncol\nin\n[\n'Mileage (km/l)'\n,\n'Avg Daily Distance (km)'\n,\n'Engine Capacity (cc)'\n]:",
+    "text": "Whereas for Q2 (Punjab and Yamaha) I used the following code:\nprint\n(\nf'Pearson correlation for Punjab and Yamaha between price retention and column'\n)\npb = df[(df[\n'State'\n] ==\n'Punjab'\n) & (df[\n'Brand'\n] ==\n'Yamaha'\n)]\nfor\ncol\nin\n[\n'Mileage (km/l)'\n,\n'Avg Daily Distance (km)'\n,\n'Engine Capacity (cc)'\n]:",
     "source": "https://discourse.onlinedegree.iitm.ac.in/t/graded-assignment-6/169283/4",
     "type": "discourse",
     "meta": {
@@ -1547,7 +1547,7 @@
     }
   },
   {
-    "text": "    pearson_corr = pb[\n'price_retention'\n].corr(pb[col])\nprint\n(\nf'\\t\n{col:\n25\n}\n:\n{pearson_corr:\n.2\nf}\n'\n)\nand got the following answers:\nPearson correlation\nfor\nPunjab and Yamaha between price retention and column\nMileage\n(km/l)\n:\n0.24\nAvg Daily\nDistance\n(km)\n: -\n0.06\nEngine\nCapacity\n(cc)\n: -\n0.08",
+    "text": "pearson_corr = pb[\n'price_retention'\n].corr(pb[col])\nprint\n(\nf'\\t\n{col:\n25\n}\n:\n{pearson_corr:\n.2\nf}\n'\n)\nand got the following answers:\nPearson correlation\nfor\nPunjab and Yamaha between price retention and column\nMileage\n(km/l)\n:\n0.24\nAvg Daily\nDistance\n(km)\n: -\n0.06\nEngine\nCapacity\n(cc)\n: -\n0.08",
     "source": "https://discourse.onlinedegree.iitm.ac.in/t/graded-assignment-6/169283/4",
     "type": "discourse",
     "meta": {
@@ -2717,7 +2717,7 @@
     }
   },
   {
-    "text": "\"static\"\n)\ntoken = os.environ[\n\"LLMFOUNDRY_TOKEN\"\n]\nasync\ndef\nllm\n(\nsystem_prompt:\nstr\n, user_prompt:\nstr\n) ->\nstr\n:\n\"\"\"Call GPT-4o-Mini via AI Proxy.\"\"\"\nasync\nwith\nhttpx.AsyncClient(timeout=\n30.0\n)\nas\nclient:\n        response =\nawait\nclient.post(\n\"https://llmfoundry.straive.com/v1/chat/completions\"\n,\n            headers={",
+    "text": "\"static\"\n)\ntoken = os.environ[\n\"LLMFOUNDRY_TOKEN\"\n]\nasync\ndef\nllm\n(\nsystem_prompt:\nstr\n, user_prompt:\nstr\n) ->\nstr\n:\n\"\"\"Call GPT-4o-Mini via AI Proxy.\"\"\"\nasync\nwith\nhttpx.AsyncClient(timeout=\n30.0\n)\nas\nclient:\nresponse =\nawait\nclient.post(\n\"https://llmfoundry.straive.com/v1/chat/completions\"\n,\nheaders={\n\"Authorization\"\n:\nf\"Bearer",
     "source": "https://discourse.onlinedegree.iitm.ac.in/t/project-1-solution-repository-link/171999/2",
     "type": "discourse",
     "meta": {
@@ -2730,7 +2730,7 @@
     }
   },
   {
-    "text": "\"Authorization\"\n:\nf\"Bearer\n{token}\n\"\n},\n            json={\n\"model\"\n:\n\"gpt-4o-mini\"\n,\n\"messages\"\n: [\n                    {\n\"role\"\n:\n\"system\"\n,\n\"content\"\n: system_prompt},\n                    {\n\"role\"\n:\n\"user\"\n,\n\"content\"\n: user_prompt},\n                ],\n            },\n        )\n        response.raise_for_status()\nreturn",
+    "text": "{token}\n\"\n},\njson={\n\"model\"\n:\n\"gpt-4o-mini\"\n,\n\"messages\"\n: [\n{\n\"role\"\n:\n\"system\"\n,\n\"content\"\n: system_prompt},\n{\n\"role\"\n:\n\"user\"\n,\n\"content\"\n: user_prompt},\n],\n},\n)\nresponse.raise_for_status()\nreturn\nresponse.json()[\n\"choices\"\n][\n0\n][\n\"message\"\n][\n\"content\"\n]\nsystem_prompt =\n\"\"\"The user will provide a task description.",
     "source": "https://discourse.onlinedegree.iitm.ac.in/t/project-1-solution-repository-link/171999/2",
     "type": "discourse",
     "meta": {
@@ -2743,7 +2743,7 @@
     }
   },
   {
-    "text": "response.json()[\n\"choices\"\n][\n0\n][\n\"message\"\n][\n\"content\"\n]\nsystem_prompt =\n\"\"\"The user will provide a task description.\nWrite one or more `bash` or `python` scripts to execute the task.\nCODING RULES:\n- uv, the Python runner, is ALREADY installed. Run with `uv run [URL] [ARGUMENTS]`",
+    "text": "Write one or more `bash` or `python` scripts to execute the task.\nCODING RULES:\n- uv, the Python runner, is ALREADY installed. Run with `uv run [URL] [ARGUMENTS]`\n- Parse dates with `python-dateutil`\n- Sender email is in the `From: \"Name <email@...>` header",
     "source": "https://discourse.onlinedegree.iitm.ac.in/t/project-1-solution-repository-link/171999/2",
     "type": "discourse",
     "meta": {
@@ -2756,7 +2756,7 @@
     }
   },
   {
-    "text": "- Parse dates with `python-dateutil`\n- Sender email is in the `From: \"Name <email@...>` header\n- When removing a prefix (e.g. `/data/docs/`) from a path, retain the path after the prefix",
+    "text": "- When removing a prefix (e.g. `/data/docs/`) from a path, retain the path after the prefix\n- Call an LLM via a POST request to `https://llmfoundry.straive.com/openai/v1/chat/completions` with `Authorization: Bearer {os.getenv(\"LLMFOUNDRY_TOKEN\")}` and this JSON body:\n{\nmodel: \"gpt-4o-mini\",\nmessages: [",
     "source": "https://discourse.onlinedegree.iitm.ac.in/t/project-1-solution-repository-link/171999/2",
     "type": "discourse",
     "meta": {
@@ -2769,7 +2769,7 @@
     }
   },
   {
-    "text": "- Call an LLM via a POST request to `https://llmfoundry.straive.com/openai/v1/chat/completions` with `Authorization: Bearer {os.getenv(\"LLMFOUNDRY_TOKEN\")}` and this JSON body:\n    {\n      model: \"gpt-4o-mini\",\n      messages: [\n        { role: \"system\", content: \"[INSERT SYSTEM PROMPT]\" },",
+    "text": "{ role: \"system\", content: \"[INSERT SYSTEM PROMPT]\" },\n{ role: \"user\", content: [\n{ type: \"text\", text: \"[INSERT USER MESSAGE]\" }, // for text\n{ type: \"image_url\", image_url: { url: `data:[IMAGE MIME TYPE];base64,[IMAGE BASE64]`, detail: \"low\" } }, // for image. Get MIME type DYNAMICALLY from image\n]}\n],",
     "source": "https://discourse.onlinedegree.iitm.ac.in/t/project-1-solution-repository-link/171999/2",
     "type": "discourse",
     "meta": {
@@ -2782,7 +2782,7 @@
     }
   },
   {
-    "text": "        { role: \"user\", content: [\n        { type: \"text\", text: \"[INSERT USER MESSAGE]\" }, // for text\n        { type: \"image_url\", image_url: { url: `data:[IMAGE MIME TYPE];base64,[IMAGE BASE64]`, detail: \"low\" } }, // for image. Get MIME type DYNAMICALLY from image\n        ]}\n      ],",
+    "text": "// response_format: \"json_object\",  // forces JSON response\n}\nResponse is in `response.choices?.[0]?.message?.content`. Error is in `response.error?.message`.",
     "source": "https://discourse.onlinedegree.iitm.ac.in/t/project-1-solution-repository-link/171999/2",
     "type": "discourse",
     "meta": {
@@ -2795,7 +2795,7 @@
     }
   },
   {
-    "text": "      // response_format: \"json_object\",  // forces JSON response\n    }\n  Response is in `response.choices?.[0]?.message?.content`. Error is in `response.error?.message`.",
+    "text": "- Calculate embeddings with a POST request to `https://llmfoundry.straive.com/openai/v1/embeddings` with `Authorization: Bearer {os.getenv(\"LLMFOUNDRY_TOKEN\")}` and this JSON body:\n{\nmodel: \"text-embedding-3-small\",\ninput: [array of strings],\n}",
     "source": "https://discourse.onlinedegree.iitm.ac.in/t/project-1-solution-repository-link/171999/2",
     "type": "discourse",
     "meta": {
@@ -2808,7 +2808,7 @@
     }
   },
   {
-    "text": "- Calculate embeddings with a POST request to `https://llmfoundry.straive.com/openai/v1/embeddings` with `Authorization: Bearer {os.getenv(\"LLMFOUNDRY_TOKEN\")}` and this JSON body:\n    {\n      model: \"text-embedding-3-small\",\n      input: [array of strings],\n    }",
+    "text": "Embeddings are in response.data[*].embedding - an array of floats.\nCalculate the dot product of the embeddings (skipping the diagonal) to find the most similar pair of strings.\nclient.post(\nf\"{openai_api_base}/embeddings\",\nheaders={\"Authorization\": f\"Bearer {openai_api_key}\"},",
     "source": "https://discourse.onlinedegree.iitm.ac.in/t/project-1-solution-repository-link/171999/2",
     "type": "discourse",
     "meta": {
@@ -2821,7 +2821,7 @@
     }
   },
   {
-    "text": "  Embeddings are in response.data[*].embedding - an array of floats.\n  Calculate the dot product of the embeddings (skipping the diagonal) to find the most similar pair of strings.\nclient.post(\n            f\"{openai_api_base}/embeddings\",",
+    "text": "json={\"model\": \"text-embedding-3-small\", \"input\": data},\n)\n- When extracting card information, use the system prompt \"Extract the EXACT dummy credit card number from this test image\"\nEXECUTION RULES: An automated agent will blindly run the scripts you provide. So ONLY",
     "source": "https://discourse.onlinedegree.iitm.ac.in/t/project-1-solution-repository-link/171999/2",
     "type": "discourse",
     "meta": {
@@ -2834,7 +2834,7 @@
     }
   },
   {
-    "text": "            headers={\"Authorization\": f\"Bearer {openai_api_key}\"},\n            json={\"model\": \"text-embedding-3-small\", \"input\": data},\n        )\n- When extracting card information, use the system prompt \"Extract the EXACT dummy credit card number from this test image\"",
+    "text": "write the FINAL script(s) to run in ```bash or ```python code fences.\n\"\"\"\n@app.post(\n\"/run\"\n)\nasync\ndef\nrun_task\n(\ntask:\nstr\n):\n\"\"\"Execute a plain-English automation task.\"\"\"\nresponse =\nawait\nllm(system_prompt, task)\nprint\n(\nf\"\\n\ud83d\udfe1 Running task:\\n\n{task.strip()}\n\\n\"\n)\nprint\n(\nf\"\\n\ud83d\udfe1\n{response}\n\\n\"\n)\nresults = []\nfor\nlanguage, code",
     "source": "https://discourse.onlinedegree.iitm.ac.in/t/project-1-solution-repository-link/171999/2",
     "type": "discourse",
     "meta": {
@@ -2847,7 +2847,7 @@
     }
   },
   {
-    "text": "EXECUTION RULES: An automated agent will blindly run the scripts you provide. So ONLY\nwrite the FINAL script(s) to run in ```bash or ```python code fences.\n\"\"\"\n@app.post(\n\"/run\"\n)\nasync\ndef\nrun_task\n(\ntask:\nstr\n):\n\"\"\"Execute a plain-English automation task.\"\"\"\nresponse =\nawait\nllm(system_prompt, task)\nprint\n(",
+    "text": "in\nre.findall(\nr\"```(python|bash)\\n(.*?)\\n```\"\n, response, re.DOTALL):\nprint\n(\nf\"\\n\ud83d\udfe1 Running\n{language}\ncode:\\n\n{code}\n\\n\"\n)\nif\nlanguage ==\n\"python\"\n:\nresult =\nawait\nexecute_python(code)\nelse\n:\n# bash\nresult =\nawait\nexecute_bash(code)\nresults.append({\n\"lang\"\n: language, **result})\nprint\n(\nf\"\\n\ud83d\udfe1 Results:\\n\n{results}\n\\n\"\n)\nreturn\n{",
     "source": "https://discourse.onlinedegree.iitm.ac.in/t/project-1-solution-repository-link/171999/2",
     "type": "discourse",
     "meta": {
@@ -2860,7 +2860,7 @@
     }
   },
   {
-    "text": "f\"\\n\ud83d\udfe1 Running task:\\n\n{task.strip()}\n\\n\"\n)\nprint\n(\nf\"\\n\ud83d\udfe1\n{response}\n\\n\"\n)\n    results = []\nfor\nlanguage, code\nin\nre.findall(\nr\"```(python|bash)\\n(.*?)\\n```\"\n, response, re.DOTALL):\nprint\n(\nf\"\\n\ud83d\udfe1 Running\n{language}\ncode:\\n\n{code}\n\\n\"\n)\nif\nlanguage ==\n\"python\"\n:\n            result =\nawait\nexecute_python(code)\nelse\n:\n# bash\nresult =",
+    "text": "\"response\"\n: response,\n\"results\"\n: results}\n@app.get(\n\"/read\"\n)\nasync\ndef\nread_file\n(\npath:\nstr\n):\n\"\"\"Read contents of a file.\"\"\"\n# Validate path is within /data\npath = os.path.normpath(path)\nif\nnot\npath.startswith(\n\"/data/\"\n):\nraise\nHTTPException(status_code=\n400\n, detail=\n\"Invalid path\"\n)\nif\nnot\nos.path.exists(path):\nraise",
     "source": "https://discourse.onlinedegree.iitm.ac.in/t/project-1-solution-repository-link/171999/2",
     "type": "discourse",
     "meta": {
@@ -2873,7 +2873,7 @@
     }
   },
   {
-    "text": "await\nexecute_bash(code)\n        results.append({\n\"lang\"\n: language, **result})\nprint\n(\nf\"\\n\ud83d\udfe1 Results:\\n\n{results}\n\\n\"\n)\nreturn\n{\n\"response\"\n: response,\n\"results\"\n: results}\n@app.get(\n\"/read\"\n)\nasync\ndef\nread_file\n(\npath:\nstr\n):\n\"\"\"Read contents of a file.\"\"\"\n# Validate path is within /data\npath = os.path.normpath(path)\nif\nnot",
+    "text": "HTTPException(status_code=\n404\n, detail=\n\"File not found\"\n)\nreturn\nFileResponse(path)\n@app.post(\n\"/execute/python\"\n)\nasync\ndef\nexecute_python\n(\ncode:\nstr\n):\n\"\"\"Execute Python code directly.\"\"\"\nproc =\nawait\nasyncio.create_subprocess_exec(\n\"python3\"\n,\n\"-\"\n,\nstdin=asyncio.subprocess.PIPE,\nstdout=asyncio.subprocess.PIPE,",
     "source": "https://discourse.onlinedegree.iitm.ac.in/t/project-1-solution-repository-link/171999/2",
     "type": "discourse",
     "meta": {
@@ -2886,7 +2886,7 @@
     }
   },
   {
-    "text": "path.startswith(\n\"/data/\"\n):\nraise\nHTTPException(status_code=\n400\n, detail=\n\"Invalid path\"\n)\nif\nnot\nos.path.exists(path):\nraise\nHTTPException(status_code=\n404\n, detail=\n\"File not found\"\n)\nreturn\nFileResponse(path)\n@app.post(\n\"/execute/python\"\n)\nasync\ndef\nexecute_python\n(\ncode:\nstr\n):\n\"\"\"Execute Python code directly.\"\"\"\nproc =",
+    "text": "stderr=asyncio.subprocess.PIPE,\n)\nstdout, stderr =\nawait\nproc.communicate(code.encode())\nif\nproc.returncode !=\n0\n:\nprint\n(\nf\"\\n\ud83d\udd34 Python execution failed:\\n\n{stderr.decode()}\n\"\n)\nraise\nHTTPException(status_code=\n500\n, detail=\nf\"Execution failed:\n{stderr.decode()}\n\"\n)\nreturn\n{\n\"stdout\"\n: stdout.decode(),\n\"stderr\"",
     "source": "https://discourse.onlinedegree.iitm.ac.in/t/project-1-solution-repository-link/171999/2",
     "type": "discourse",
     "meta": {
@@ -2899,7 +2899,7 @@
     }
   },
   {
-    "text": "await\nasyncio.create_subprocess_exec(\n\"python3\"\n,\n\"-\"\n,\n        stdin=asyncio.subprocess.PIPE,\n        stdout=asyncio.subprocess.PIPE,\n        stderr=asyncio.subprocess.PIPE,\n    )\n    stdout, stderr =\nawait\nproc.communicate(code.encode())\nif\nproc.returncode !=\n0\n:\nprint\n(\nf\"\\n\ud83d\udd34 Python execution failed:\\n",
+    "text": ": stderr.decode()}\n@app.post(\n\"/execute/bash\"\n)\nasync\ndef\nexecute_bash\n(\ncode:\nstr\n):\n\"\"\"Execute bash code directly.\"\"\"\nproc =\nawait\nasyncio.create_subprocess_exec(\n\"bash\"\n,\nstdin=asyncio.subprocess.PIPE,\nstdout=asyncio.subprocess.PIPE,\nstderr=asyncio.subprocess.PIPE,\n)\nstdout, stderr =\nawait",
     "source": "https://discourse.onlinedegree.iitm.ac.in/t/project-1-solution-repository-link/171999/2",
     "type": "discourse",
     "meta": {
@@ -2912,7 +2912,7 @@
     }
   },
   {
-    "text": "{stderr.decode()}\n\"\n)\nraise\nHTTPException(status_code=\n500\n, detail=\nf\"Execution failed:\n{stderr.decode()}\n\"\n)\nreturn\n{\n\"stdout\"\n: stdout.decode(),\n\"stderr\"\n: stderr.decode()}\n@app.post(\n\"/execute/bash\"\n)\nasync\ndef\nexecute_bash\n(\ncode:\nstr\n):\n\"\"\"Execute bash code directly.\"\"\"\nproc =\nawait\nasyncio.create_subprocess_exec(\n\"bash\"\n,",
+    "text": "proc.communicate(code.encode())\nif\nproc.returncode !=\n0\n:\nprint\n(\nf\"\\n\ud83d\udd34 Bash execution failed:\\n\n{stderr.decode()}\n\"\n)\nraise\nHTTPException(status_code=\n500\n, detail=\nf\"Execution failed:\n{stderr.decode()}\n\"\n)\nreturn\n{\n\"stdout\"\n: stdout.decode(),\n\"stderr\"\n: stderr.decode()}\n@app.get(\n\"/\"\n)\nasync\ndef\nread_root\n():",
     "source": "https://discourse.onlinedegree.iitm.ac.in/t/project-1-solution-repository-link/171999/2",
     "type": "discourse",
     "meta": {
@@ -2925,20 +2925,7 @@
     }
   },
   {
-    "text": "        stdin=asyncio.subprocess.PIPE,\n        stdout=asyncio.subprocess.PIPE,\n        stderr=asyncio.subprocess.PIPE,\n    )\n    stdout, stderr =\nawait\nproc.communicate(code.encode())\nif\nproc.returncode !=\n0\n:\nprint\n(\nf\"\\n\ud83d\udd34 Bash execution failed:\\n\n{stderr.decode()}\n\"\n)\nraise\nHTTPException(status_code=\n500\n, detail=",
-    "source": "https://discourse.onlinedegree.iitm.ac.in/t/project-1-solution-repository-link/171999/2",
-    "type": "discourse",
-    "meta": {
-      "topic_title": "Project 1 solution repository link - Courses / Tools in Data Science - IITM-DSA",
-      "post_number": "2",
-      "username": "carlton",
-      "post_date": "Apr 7, 2025 11:20 am",
-      "images": 0,
-      "code_blocks": 1
-    }
-  },
-  {
-    "text": "f\"Execution failed:\n{stderr.decode()}\n\"\n)\nreturn\n{\n\"stdout\"\n: stdout.decode(),\n\"stderr\"\n: stderr.decode()}\n@app.get(\n\"/\"\n)\nasync\ndef\nread_root\n():\n\"\"\"Serve the index.html file.\"\"\"\nreturn\nFileResponse(\n\"static/index.html\"\n)\nif\n__name__ ==\n\"__main__\"\n:\nimport\nuvicorn\n    uvicorn.run(app, host=\n\"0.0.0.0\"\n, port=\n8000\n)",
+    "text": "\"\"\"Serve the index.html file.\"\"\"\nreturn\nFileResponse(\n\"static/index.html\"\n)\nif\n__name__ ==\n\"__main__\"\n:\nimport\nuvicorn\nuvicorn.run(app, host=\n\"0.0.0.0\"\n, port=\n8000\n)",
     "source": "https://discourse.onlinedegree.iitm.ac.in/t/project-1-solution-repository-link/171999/2",
     "type": "discourse",
     "meta": {
@@ -3315,7 +3302,7 @@
     }
   },
   {
-    "text": "extract_credit_card_number\n():\nimport\nrequests\nimport\nbase64\nimport\nos\nfrom\ndotenv\nimport\nload_dotenv\n    load_dotenv()\n    BASE_URL =\n\"http://aiproxy.sanand.workers.dev/openai/v1/chat/completions\"\nheaders = {\n\"Content-Type\"\n:\n\"application/json\"\n,\n\"Authorization\"\n:\nf\"Bearer\n{os.environ[\n\"AIPROXY_TOKEN\"\n]}\n\"\n}\n    image_path =",
+    "text": "extract_credit_card_number\n():\nimport\nrequests\nimport\nbase64\nimport\nos\nfrom\ndotenv\nimport\nload_dotenv\nload_dotenv()\nBASE_URL =\n\"http://aiproxy.sanand.workers.dev/openai/v1/chat/completions\"\nheaders = {\n\"Content-Type\"\n:\n\"application/json\"\n,\n\"Authorization\"\n:\nf\"Bearer\n{os.environ[\n\"AIPROXY_TOKEN\"\n]}\n\"\n}\nimage_path =",
     "source": "https://discourse.onlinedegree.iitm.ac.in/t/project-1-llm-based-automation-agent-discussion-thread-tds-jan-2025/164277/12/15",
     "type": "discourse",
     "meta": {
@@ -3328,7 +3315,7 @@
     }
   },
   {
-    "text": "\"../data/credit_card.png\"\nwith\nopen\n(image_path,\n\"rb\"\n)\nas\nimage_file:\n        base64_image = base64.b64encode(image_file.read()).decode(\n\"utf-8\"\n)\n    payload = {\n\"model\"\n:\n\"gpt-4o-mini\"\n,\n\"messages\"\n: [\n            {\n\"role\"\n:\n\"system\"\n,\n\"content\"\n:",
+    "text": "\"../data/credit_card.png\"\nwith\nopen\n(image_path,\n\"rb\"\n)\nas\nimage_file:\nbase64_image = base64.b64encode(image_file.read()).decode(\n\"utf-8\"\n)\npayload = {\n\"model\"\n:\n\"gpt-4o-mini\"\n,\n\"messages\"\n: [\n{\n\"role\"\n:\n\"system\"\n,\n\"content\"\n:",
     "source": "https://discourse.onlinedegree.iitm.ac.in/t/project-1-llm-based-automation-agent-discussion-thread-tds-jan-2025/164277/12/15",
     "type": "discourse",
     "meta": {
@@ -3341,7 +3328,7 @@
     }
   },
   {
-    "text": "\"You are a helpful assistant that provides detailed and accurate descriptions of images. Focus on describing the objects, colors, textures, the overall scene, and most importantly, the text and numbers in the image. Be concise but thorough.\"\n},\n            {\n\"role\"\n:\n\"user\"\n,\n\"content\"\n: [",
+    "text": "\"You are a helpful assistant that provides detailed and accurate descriptions of images. Focus on describing the objects, colors, textures, the overall scene, and most importantly, the text and numbers in the image. Be concise but thorough.\"\n},\n{\n\"role\"\n:\n\"user\"\n,\n\"content\"\n: [\n{\n\"type\"\n:\n\"text\"\n,\n\"text\"\n:",
     "source": "https://discourse.onlinedegree.iitm.ac.in/t/project-1-llm-based-automation-agent-discussion-thread-tds-jan-2025/164277/12/15",
     "type": "discourse",
     "meta": {
@@ -3354,7 +3341,7 @@
     }
   },
   {
-    "text": "                    {\n\"type\"\n:\n\"text\"\n,\n\"text\"\n:\n\"You are given an image containing a credit card number. Extract the credit card number from the image\"\n},\n                    {\n\"type\"\n:\n\"image_url\"\n,\n\"image_url\"\n: {\n\"url\"\n:\nf\"data:image/png;base64,\n{base64_image}\n\"\n}\n                    }\n                ]\n            }",
+    "text": "\"You are given an image containing a credit card number. Extract the credit card number from the image\"\n},\n{\n\"type\"\n:\n\"image_url\"\n,\n\"image_url\"\n: {\n\"url\"\n:\nf\"data:image/png;base64,\n{base64_image}\n\"\n}\n}\n]\n}\n],\n}\nresponse = requests.post(BASE_URL, headers=headers, json=payload)\nif\nresponse.status_code ==\n200\n:",
     "source": "https://discourse.onlinedegree.iitm.ac.in/t/project-1-llm-based-automation-agent-discussion-thread-tds-jan-2025/164277/12/15",
     "type": "discourse",
     "meta": {
@@ -3367,20 +3354,7 @@
     }
   },
   {
-    "text": "        ],\n    }\n    response = requests.post(BASE_URL, headers=headers, json=payload)\nif\nresponse.status_code ==\n200\n:\n        result = response.json()\nprint\n(\n\"RESULT:\"\n, result)\n        cno = result[\n\"choices\"\n][\n0\n][\n\"message\"\n][\n\"content\"\n]\nprint\n(\n\"CREDIT CARD NUMBER:\"\n, cno)\nelse\n:\nprint\n(\nf\"Error:\n{response.status_code}\n\"",
-    "source": "https://discourse.onlinedegree.iitm.ac.in/t/project-1-llm-based-automation-agent-discussion-thread-tds-jan-2025/164277/12/15",
-    "type": "discourse",
-    "meta": {
-      "topic_title": "Project 1 - LLM-based Automation Agent - Discussion Thread [TDS Jan 2025] - Courses / Tools in Data Science - IITM-DSA",
-      "post_number": "15",
-      "username": "23f2005325",
-      "post_date": "Jan 26, 2025 4:00 pm",
-      "images": 0,
-      "code_blocks": 2
-    }
-  },
-  {
-    "text": ")\nprint\n(response.text)\nplease guide\n@Jivraj\n@Saransh_Saini",
+    "text": "result = response.json()\nprint\n(\n\"RESULT:\"\n, result)\ncno = result[\n\"choices\"\n][\n0\n][\n\"message\"\n][\n\"content\"\n]\nprint\n(\n\"CREDIT CARD NUMBER:\"\n, cno)\nelse\n:\nprint\n(\nf\"Error:\n{response.status_code}\n\"\n)\nprint\n(response.text)\nplease guide\n@Jivraj\n@Saransh_Saini",
     "source": "https://discourse.onlinedegree.iitm.ac.in/t/project-1-llm-based-automation-agent-discussion-thread-tds-jan-2025/164277/12/15",
     "type": "discourse",
     "meta": {
@@ -3679,7 +3653,7 @@
     }
   },
   {
-    "text": "Project results have not been released yet. They have posponed everything.\nPlease look into this post.\nRevised dates [TDS Jan 2025]\nTools in Data Science\nA few updates on dates. Hope this eases pressure a little. ",
+    "text": "Project results have not been released yet. They have posponed everything.\nPlease look into this post.\nRevised dates [TDS Jan 2025]\nTools in Data Science\nA few updates on dates. Hope this eases pressure a little.",
     "source": "https://discourse.onlinedegree.iitm.ac.in/t/project-1-tds-score-not-showing-i/168916/2",
     "type": "discourse",
     "meta": {
@@ -7059,7 +7033,7 @@
     }
   },
   {
-    "text": "unzip /workspaces/TDS/q-move-rename-files.zip -d extracted_folder123123\n    5\nmkdir\nempty_folder \n    6  find extracted_folder -\ntype\nf -\nexec\nmv\n{} empty_folder/ \\; \n    7\nls\n8  find extracted_folder123123 -\ntype\nf -\nexec\nmv\n{} empty_folder/ \\; \n    9\ncd\nempty_folder  \n   10\nfor\nfile\nin\n*;\ndo\nnew_name=$(\necho\n\"\n$file\n\"\n|\ntr",
+    "text": "unzip /workspaces/TDS/q-move-rename-files.zip -d extracted_folder123123\n5\nmkdir\nempty_folder\n6  find extracted_folder -\ntype\nf -\nexec\nmv\n{} empty_folder/ \\;\n7\nls\n8  find extracted_folder123123 -\ntype\nf -\nexec\nmv\n{} empty_folder/ \\;\n9\ncd\nempty_folder\n10\nfor\nfile\nin\n*;\ndo\nnew_name=$(\necho\n\"\n$file\n\"\n|\ntr\n'0123456789'\n'1234567890'\n)  ;\nmv\n\"",
     "source": "https://discourse.onlinedegree.iitm.ac.in/t/solving-roe-realtime/168943/3",
     "type": "discourse",
     "meta": {
@@ -7072,7 +7046,7 @@
     }
   },
   {
-    "text": "'0123456789'\n'1234567890'\n)  ;\nmv\n\"\n$file\n\"\n\"\n$new_name\n\"\n;\ndone\n11  grep . * | LC_ALL=C\nsort\n|\nsha256sum",
+    "text": "$file\n\"\n\"\n$new_name\n\"\n;\ndone\n11  grep . * | LC_ALL=C\nsort\n|\nsha256sum",
     "source": "https://discourse.onlinedegree.iitm.ac.in/t/solving-roe-realtime/168943/3",
     "type": "discourse",
     "meta": {
@@ -8541,7 +8515,7 @@
     }
   },
   {
-    "text": "What's the actual purpose of impossible ROE exam?\nTools in Data Science\n@ankit.jain\n\u2013 I\u2019m the culprit behind this RoE structure. Thanks for the opportunity to share my thought process. \nWhat does this RoE evaluate? Implicit learning. ",
+    "text": "What's the actual purpose of impossible ROE exam?\nTools in Data Science\n@ankit.jain\n\u2013 I\u2019m the culprit behind this RoE structure. Thanks for the opportunity to share my thought process.\nWhat does this RoE evaluate? Implicit learning.\nImplicit learning is \u201cHow much can they answer if woken up from sleep?\u201d",
     "source": "https://discourse.onlinedegree.iitm.ac.in/t/create-a-question-solving-groups-for-roe/168567/10",
     "type": "discourse",
     "meta": {
@@ -8554,20 +8528,7 @@
     }
   },
   {
-    "text": "Implicit learning is \u201cHow much can they answer if woken up from sleep?\u201d\nExplicit learning is \u201cHow much can they answer given time and Internet?\u201d\nSome may know 10% implicitly. Some know 50%. They\u2019ll answer those in a few seconds. ",
-    "source": "https://discourse.onlinedegree.iitm.ac.in/t/create-a-question-solving-groups-for-roe/168567/10",
-    "type": "discourse",
-    "meta": {
-      "topic_title": "Create a Question solving groups for ROE - Courses / Tools in Data Science - IITM-DSA",
-      "post_number": "10",
-      "username": "23f1002382",
-      "post_date": "Feb 26, 2025 9:29 pm",
-      "images": 1,
-      "code_blocks": 0
-    }
-  },
-  {
-    "text": "Some, they can FIND out. with Google, StackOverflow, ChatGPT. That\u2019s explicit learning. But it takes time\u2026",
+    "text": "Explicit learning is \u201cHow much can they answer given time and Internet?\u201d\nSome may know 10% implicitly. Some know 50%. They\u2019ll answer those in a few seconds.\nSome, they can FIND out. with Google, StackOverflow, ChatGPT. That\u2019s explicit learning. But it takes time\u2026",
     "source": "https://discourse.onlinedegree.iitm.ac.in/t/create-a-question-solving-groups-for-roe/168567/10",
     "type": "discourse",
     "meta": {
@@ -9087,7 +9048,7 @@
     }
   },
   {
-    "text": "code to take reference from:\nimport\ngzip\nimport\npandas\nas\npd\nfrom\ndatetime\nimport\ndatetime\nlog_path =\n's-anand.net-May-2024.gz'\nstart_time = datetime.strptime(\n'01:00:00'\n,\n'%H:%M:%S'\n).time()\nend_time = datetime.strptime(\n'15:00:00'\n,\n'%H:%M:%S'\n).time()\nlog_data = []\ndef\nparse_log\n(\nline\n):\n    parts = line.split(\n' '\n)",
+    "text": "code to take reference from:\nimport\ngzip\nimport\npandas\nas\npd\nfrom\ndatetime\nimport\ndatetime\nlog_path =\n's-anand.net-May-2024.gz'\nstart_time = datetime.strptime(\n'01:00:00'\n,\n'%H:%M:%S'\n).time()\nend_time = datetime.strptime(\n'15:00:00'\n,\n'%H:%M:%S'\n).time()\nlog_data = []\ndef\nparse_log\n(\nline\n):\nparts = line.split(\n' '\n)",
     "source": "https://discourse.onlinedegree.iitm.ac.in/t/q3-ga5-not-accepting-right-answer/168011/1",
     "type": "discourse",
     "meta": {
@@ -9100,7 +9061,7 @@
     }
   },
   {
-    "text": "    log_time = datetime.strptime(parts[\n3\n][\n1\n:],\n'%d/%b/%Y:%H:%M:%S'\n)\n    method, url, status = parts[\n5\n][\n1\n:], parts[\n6\n],\nint\n(parts[\n8\n])\nreturn\nlog_time, method, url, status\nwith\ngzip.\nopen\n(log_path,\n'rt'\n)\nas\nfile:\nfor\nentry\nin\nfile:\n        log_time, method, url, status = parse_log(entry)\nif\nmethod ==\n'GET'\nand",
+    "text": "log_time = datetime.strptime(parts[\n3\n][\n1\n:],\n'%d/%b/%Y:%H:%M:%S'\n)\nmethod, url, status = parts[\n5\n][\n1\n:], parts[\n6\n],\nint\n(parts[\n8\n])\nreturn\nlog_time, method, url, status\nwith\ngzip.\nopen\n(log_path,\n'rt'\n)\nas\nfile:\nfor\nentry\nin\nfile:\nlog_time, method, url, status = parse_log(entry)\nif\nmethod ==\n'GET'\nand\nurl.startswith(\n'/blog/'\n)\nand",
     "source": "https://discourse.onlinedegree.iitm.ac.in/t/q3-ga5-not-accepting-right-answer/168011/1",
     "type": "discourse",
     "meta": {
@@ -9113,7 +9074,7 @@
     }
   },
   {
-    "text": "url.startswith(\n'/blog/'\n)\nand\n200\n<= status <\n300\n:\nif\nlog_time.weekday() ==\n0\nand\nstart_time <= log_time.time() < end_time:\n                log_data.append(entry)\nprint\n(\nf\"Successful GET requests:\n{\nlen\n(log_data)}\n\"\n)\nps: I shared code after the deadline hopefully no issues there!",
+    "text": "200\n<= status <\n300\n:\nif\nlog_time.weekday() ==\n0\nand\nstart_time <= log_time.time() < end_time:\nlog_data.append(entry)\nprint\n(\nf\"Successful GET requests:\n{\nlen\n(log_data)}\n\"\n)\nps: I shared code after the deadline hopefully no issues there!",
     "source": "https://discourse.onlinedegree.iitm.ac.in/t/q3-ga5-not-accepting-right-answer/168011/1",
     "type": "discourse",
     "meta": {
@@ -10660,7 +10621,7 @@
     }
   },
   {
-    "text": "Please refer to this post\nGRADED ASSIGNMENT RESULT NOT SHOWING , kindly check on this\nTools in Data Science\nOn the 13th of Feb (3 day ago at the time of this reply) an email was sent to all students with the subject [TDS Jan 2025] Grade Corrections. Please refer to that email. \nKind regards",
+    "text": "Please refer to this post\nGRADED ASSIGNMENT RESULT NOT SHOWING , kindly check on this\nTools in Data Science\nOn the 13th of Feb (3 day ago at the time of this reply) an email was sent to all students with the subject [TDS Jan 2025] Grade Corrections. Please refer to that email.\nKind regards",
     "source": "https://discourse.onlinedegree.iitm.ac.in/t/graded-assignments-dashboard-scores-incorrect-missing/166816/21",
     "type": "discourse",
     "meta": {
@@ -11713,7 +11674,7 @@
     }
   },
   {
-    "text": "from fastapi.responses import StreamingResponse, JSONResponse\nfrom typing import Dict, Any, List\nimport subprocess\nimport datetime\nfrom pathlib import Path\nimport sqlite3\napp = FastAPI()\napp.add_middleware(\n    CORSMiddleware,\n    allow_origins=[\"*\"],\n    allow_credentials=True,",
+    "text": "from fastapi.responses import StreamingResponse, JSONResponse\nfrom typing import Dict, Any, List\nimport subprocess\nimport datetime\nfrom pathlib import Path\nimport sqlite3\napp = FastAPI()\napp.add_middleware(\nCORSMiddleware,\nallow_origins=[\"*\"],\nallow_credentials=True,\nallow_methods=[\"GET\", \"POST\"],",
     "source": "https://discourse.onlinedegree.iitm.ac.in/t/regarding-project1-for-file-not-detecting-after-sending-post-request/167172/1",
     "type": "discourse",
     "meta": {
@@ -11726,7 +11687,7 @@
     }
   },
   {
-    "text": "    allow_methods=[\"GET\", \"POST\"],\n    allow_headers=[\"*\"],\n)\n#AIPROXY_TOKEN = os.getenv(\"AIPROXY_TOKEN\")\nload_dotenv()\nAIPROXY_TOKEN = os.getenv(\"AIPROXY_TOKEN\", \"enter your token here\")\ndef sort_contacts(contacts_file_path: str, output_file_path: str):\n    try:",
+    "text": "allow_headers=[\"*\"],\n)\n#AIPROXY_TOKEN = os.getenv(\"AIPROXY_TOKEN\")\nload_dotenv()\nAIPROXY_TOKEN = os.getenv(\"AIPROXY_TOKEN\", \"enter your token here\")\ndef sort_contacts(contacts_file_path: str, output_file_path: str):\ntry:\ncontacts = pd.read_json(contacts_file_path)",
     "source": "https://discourse.onlinedegree.iitm.ac.in/t/regarding-project1-for-file-not-detecting-after-sending-post-request/167172/1",
     "type": "discourse",
     "meta": {
@@ -11739,7 +11700,7 @@
     }
   },
   {
-    "text": "        contacts = pd.read_json(contacts_file_path)\n        contacts.sort_values([\"last_name\", \"first_name\"]).to_json(output_file_path, orient=\"records\")\n        return {\"message\": f\"Contacts sorted and saved to {output_file_path}\"}\n    except Exception as e:",
+    "text": "contacts.sort_values([\"last_name\", \"first_name\"]).to_json(output_file_path, orient=\"records\")\nreturn {\"message\": f\"Contacts sorted and saved to {output_file_path}\"}\nexcept Exception as e:\nreturn {\"error\": f\"Failed to sort contacts: {str(e)}\"}\na4_tool = {\n\"type\": \"function\",\n\"function\": {",
     "source": "https://discourse.onlinedegree.iitm.ac.in/t/regarding-project1-for-file-not-detecting-after-sending-post-request/167172/1",
     "type": "discourse",
     "meta": {
@@ -11752,7 +11713,7 @@
     }
   },
   {
-    "text": "        return {\"error\": f\"Failed to sort contacts: {str(e)}\"}\na4_tool = {\n    \"type\": \"function\",\n    \"function\": {\n        \"name\": \"sort_contacts\",",
+    "text": "\"name\": \"sort_contacts\",\n\"description\": \"This function takes data from a json file and sorts the data first by last name and then by first name, then it stores it inside the speicfied location.\",\n\"parameters\": {\n\"type\": \"object\",\n\"properties\": {\n\"contacts_file_path\": {\n\"type\": \"string\",",
     "source": "https://discourse.onlinedegree.iitm.ac.in/t/regarding-project1-for-file-not-detecting-after-sending-post-request/167172/1",
     "type": "discourse",
     "meta": {
@@ -11765,7 +11726,7 @@
     }
   },
   {
-    "text": "        \"description\": \"This function takes data from a json file and sorts the data first by last name and then by first name, then it stores it inside the speicfied location.\",\n        \"parameters\": {\n            \"type\": \"object\",\n            \"properties\": {\n                \"contacts_file_path\": {",
+    "text": "\"description\": \"The relative path to the input JSON file containing the contacts.\"\n},\n\"output_file_path\": {\n\"type\": \"string\",\n\"description\": \"The relative path to the output JSON file to store the sorted contacts.\"\n}\n},\n\"required\": [\"contacts_file_path\", \"output_file_path\"],\n\"additionalProperties\": False\n},",
     "source": "https://discourse.onlinedegree.iitm.ac.in/t/regarding-project1-for-file-not-detecting-after-sending-post-request/167172/1",
     "type": "discourse",
     "meta": {
@@ -11778,7 +11739,7 @@
     }
   },
   {
-    "text": "                    \"type\": \"string\",\n                    \"description\": \"The relative path to the input JSON file containing the contacts.\"\n                },\n                \"output_file_path\": {\n                    \"type\": \"string\",",
+    "text": "\"strict\": True\n},\n}\ntools = [bakecake, a1_tool, a2_tool, a3_tool, a4_tool, a5_tool, a6_tool, a7_tool, a8_tool, a9_tool, a10_tool]\ndef query_gpt(user_input: str, tools: list[dict] = tools) -> dict:\nresponse = requests.post(\nurl=\"https://aiproxy.sanand.workers.dev/openai/v1/chat/completions\",\nheaders={",
     "source": "https://discourse.onlinedegree.iitm.ac.in/t/regarding-project1-for-file-not-detecting-after-sending-post-request/167172/1",
     "type": "discourse",
     "meta": {
@@ -11791,7 +11752,7 @@
     }
   },
   {
-    "text": "                    \"description\": \"The relative path to the output JSON file to store the sorted contacts.\"\n                }\n            },\n            \"required\": [\"contacts_file_path\", \"output_file_path\"],\n            \"additionalProperties\": False\n        },\n        \"strict\": True\n    },\n}",
+    "text": "\"Content-Type\": \"application/json\",\n\"Authorization\": f\"Bearer {AIPROXY_TOKEN}\"\n},\njson={\n\"model\": \"gpt-4o-mini\",\n\"messages\": [\n{\n\"role\": \"user\",\n\"content\": user_input\n}\n],\n\"tools\": tools,\n\"tool_choice\": \"auto\"\n}\n)\nreturn response.json()\n@app.get(\"/\")\ndef home():\nreturn {\"Hello\": \"World\"}\n@app.get(\"/read\")",
     "source": "https://discourse.onlinedegree.iitm.ac.in/t/regarding-project1-for-file-not-detecting-after-sending-post-request/167172/1",
     "type": "discourse",
     "meta": {
@@ -11804,7 +11765,7 @@
     }
   },
   {
-    "text": "tools = [bakecake, a1_tool, a2_tool, a3_tool, a4_tool, a5_tool, a6_tool, a7_tool, a8_tool, a9_tool, a10_tool]\ndef query_gpt(user_input: str, tools: list[dict] = tools) -> dict:\n    response = requests.post(\n        url=\"https://aiproxy.sanand.workers.dev/openai/v1/chat/completions\",\n        headers={",
+    "text": "def read_file(path: str):\ntry:\nwith open(path, \"r\") as f:\nreturn f.read()\nexcept Exception as e:\nraise HTTPException(status_code=404, detail=\"File does not exist\")\n@app.post(\"/run\")\nasync def run(task: str):\nquery = query_gpt(task)\nprint(query)  # Print the full response to inspect it.",
     "source": "https://discourse.onlinedegree.iitm.ac.in/t/regarding-project1-for-file-not-detecting-after-sending-post-request/167172/1",
     "type": "discourse",
     "meta": {
@@ -11817,7 +11778,7 @@
     }
   },
   {
-    "text": "            \"Content-Type\": \"application/json\",\n            \"Authorization\": f\"Bearer {AIPROXY_TOKEN}\"\n        },\n        json={\n            \"model\": \"gpt-4o-mini\",\n            \"messages\": [\n                {\n                    \"role\": \"user\",\n                    \"content\": user_input\n                }",
+    "text": "if 'choices' not in query:\nraise HTTPException(status_code=500, detail=\"Invalid response format from GPT API\")\ntry:\ntool_calls = query['choices'][0]['message'].get('tool_calls', [])\nif tool_calls:\nfunc_name = tool_calls[0]['function']['name']\nargs = json.loads(tool_calls[0]['function']['arguments'])",
     "source": "https://discourse.onlinedegree.iitm.ac.in/t/regarding-project1-for-file-not-detecting-after-sending-post-request/167172/1",
     "type": "discourse",
     "meta": {
@@ -11830,7 +11791,7 @@
     }
   },
   {
-    "text": "            ],\n            \"tools\": tools,\n            \"tool_choice\": \"auto\"\n        }\n    )\n    return response.json()\n@app.get(\"/\")\ndef home():\n    return {\"Hello\": \"World\"}\n@app.get(\"/read\")\ndef read_file(path: str):\n    try:\n        with open(path, \"r\") as f:\n            return f.read()",
+    "text": "# Map function names to their respective functions\nfunction_map = {\n\"cakebake\": cakebake,\n\"install_uv_and_run_datagen\": install_uv_and_run_datagen,\n\"format_markdown_file\": format_markdown_file,\n\"count_wednesdays\": count_wednesdays,\n\"sort_contacts\": sort_contacts,\n\"extract_recent_logs\": extract_recent_logs,",
     "source": "https://discourse.onlinedegree.iitm.ac.in/t/regarding-project1-for-file-not-detecting-after-sending-post-request/167172/1",
     "type": "discourse",
     "meta": {
@@ -11843,7 +11804,7 @@
     }
   },
   {
-    "text": "    except Exception as e:\n        raise HTTPException(status_code=404, detail=\"File does not exist\")\n@app.post(\"/run\")\nasync def run(task: str):\n    query = query_gpt(task)\n    print(query)  # Print the full response to inspect it.\n    if 'choices' not in query:",
+    "text": "\"create_markdown_index\": create_markdown_index,\n\"extract_sender_email\": extract_sender_email,\n\"extract_credit_card_number\": extract_credit_card_number,\n\"find_similar_comments\": find_similar_comments,\n\"calculate_gold_ticket_sales\": calculate_gold_ticket_sales,\n}\nif func_name in function_map:",
     "source": "https://discourse.onlinedegree.iitm.ac.in/t/regarding-project1-for-file-not-detecting-after-sending-post-request/167172/1",
     "type": "discourse",
     "meta": {
@@ -11856,7 +11817,7 @@
     }
   },
   {
-    "text": "        raise HTTPException(status_code=500, detail=\"Invalid response format from GPT API\")\n    try:\n        tool_calls = query['choices'][0]['message'].get('tool_calls', [])\n        if tool_calls:\n            func_name = tool_calls[0]['function']['name']",
+    "text": "output = function_map[func_name](**args)\nelse:\nraise HTTPException(status_code=500, detail=\"Unknown function called\")\nelse:\nraise HTTPException(status_code=500, detail=\"No function call found in response\")\nexcept KeyError as e:",
     "source": "https://discourse.onlinedegree.iitm.ac.in/t/regarding-project1-for-file-not-detecting-after-sending-post-request/167172/1",
     "type": "discourse",
     "meta": {
@@ -11869,7 +11830,7 @@
     }
   },
   {
-    "text": "            args = json.loads(tool_calls[0]['function']['arguments'])\n            # Map function names to their respective functions\n            function_map = {\n                \"cakebake\": cakebake,\n                \"install_uv_and_run_datagen\": install_uv_and_run_datagen,",
+    "text": "raise HTTPException(status_code=500, detail=f\"KeyError: Missing key in response - {str(e)}\")\nexcept Exception as e:\nraise HTTPException(status_code=500, detail=f\"Error processing the request: {str(e)}\")\nreturn output\nif __name__ == \"__main__\":\nimport uvicorn\nuvicorn.run(app, host=\"0.0.0.0\", port=8000)",
     "source": "https://discourse.onlinedegree.iitm.ac.in/t/regarding-project1-for-file-not-detecting-after-sending-post-request/167172/1",
     "type": "discourse",
     "meta": {
@@ -11882,59 +11843,7 @@
     }
   },
   {
-    "text": "                \"format_markdown_file\": format_markdown_file,\n                \"count_wednesdays\": count_wednesdays,\n                \"sort_contacts\": sort_contacts,\n                \"extract_recent_logs\": extract_recent_logs,\n                \"create_markdown_index\": create_markdown_index,",
-    "source": "https://discourse.onlinedegree.iitm.ac.in/t/regarding-project1-for-file-not-detecting-after-sending-post-request/167172/1",
-    "type": "discourse",
-    "meta": {
-      "topic_title": "Regarding project1 for file not detecting after sending post request - Courses / Tools in Data Science - IITM-DSA",
-      "post_number": "1",
-      "username": "Sakshi6479",
-      "post_date": "Feb 14, 2025 6:08 pm",
-      "images": 1,
-      "code_blocks": 1
-    }
-  },
-  {
-    "text": "                \"extract_sender_email\": extract_sender_email,\n                \"extract_credit_card_number\": extract_credit_card_number,\n                \"find_similar_comments\": find_similar_comments,\n                \"calculate_gold_ticket_sales\": calculate_gold_ticket_sales,\n            }",
-    "source": "https://discourse.onlinedegree.iitm.ac.in/t/regarding-project1-for-file-not-detecting-after-sending-post-request/167172/1",
-    "type": "discourse",
-    "meta": {
-      "topic_title": "Regarding project1 for file not detecting after sending post request - Courses / Tools in Data Science - IITM-DSA",
-      "post_number": "1",
-      "username": "Sakshi6479",
-      "post_date": "Feb 14, 2025 6:08 pm",
-      "images": 1,
-      "code_blocks": 1
-    }
-  },
-  {
-    "text": "            if func_name in function_map:\n                output = function_map[func_name](**args)\n            else:\n                raise HTTPException(status_code=500, detail=\"Unknown function called\")\n        else:",
-    "source": "https://discourse.onlinedegree.iitm.ac.in/t/regarding-project1-for-file-not-detecting-after-sending-post-request/167172/1",
-    "type": "discourse",
-    "meta": {
-      "topic_title": "Regarding project1 for file not detecting after sending post request - Courses / Tools in Data Science - IITM-DSA",
-      "post_number": "1",
-      "username": "Sakshi6479",
-      "post_date": "Feb 14, 2025 6:08 pm",
-      "images": 1,
-      "code_blocks": 1
-    }
-  },
-  {
-    "text": "            raise HTTPException(status_code=500, detail=\"No function call found in response\")\n    except KeyError as e:\n        raise HTTPException(status_code=500, detail=f\"KeyError: Missing key in response - {str(e)}\")\n    except Exception as e:",
-    "source": "https://discourse.onlinedegree.iitm.ac.in/t/regarding-project1-for-file-not-detecting-after-sending-post-request/167172/1",
-    "type": "discourse",
-    "meta": {
-      "topic_title": "Regarding project1 for file not detecting after sending post request - Courses / Tools in Data Science - IITM-DSA",
-      "post_number": "1",
-      "username": "Sakshi6479",
-      "post_date": "Feb 14, 2025 6:08 pm",
-      "images": 1,
-      "code_blocks": 1
-    }
-  },
-  {
-    "text": "        raise HTTPException(status_code=500, detail=f\"Error processing the request: {str(e)}\")\n    return output\nif __name__ == \"__main__\":\n    import uvicorn\n    uvicorn.run(app, host=\"0.0.0.0\", port=8000)\nScreenshot 2025-02-14 171217\n2075\u00d71343 176 KB\n@Saransh_Saini\n,\n@Jivraj\n,\n@carlton",
+    "text": "Screenshot 2025-02-14 171217\n2075\u00d71343 176 KB\n@Saransh_Saini\n,\n@Jivraj\n,\n@carlton",
     "source": "https://discourse.onlinedegree.iitm.ac.in/t/regarding-project1-for-file-not-detecting-after-sending-post-request/167172/1",
     "type": "discourse",
     "meta": {
@@ -12038,7 +11947,7 @@
     }
   },
   {
-    "text": "import pandas as pd\nfrom fastapi.responses import StreamingResponse, JSONResponse\nfrom typing import Dict, Any, List\nimport subprocess\nimport datetime\nfrom pathlib import Path\nimport sqlite3\nimport base64\nimport mimetypes\nimport numpy as np\napp = FastAPI()\napp.add_middleware(\n    CORSMiddleware,",
+    "text": "import pandas as pd\nfrom fastapi.responses import StreamingResponse, JSONResponse\nfrom typing import Dict, Any, List\nimport subprocess\nimport datetime\nfrom pathlib import Path\nimport sqlite3\nimport base64\nimport mimetypes\nimport numpy as np\napp = FastAPI()\napp.add_middleware(\nCORSMiddleware,\nallow_origins=[\"*\"],",
     "source": "https://discourse.onlinedegree.iitm.ac.in/t/regarding-project1-for-file-not-detecting-after-sending-post-request/167172/8",
     "type": "discourse",
     "meta": {
@@ -12051,7 +11960,7 @@
     }
   },
   {
-    "text": "    allow_origins=[\"*\"],\n    allow_credentials=True,\n    allow_methods=[\"GET\", \"POST\"],\n    allow_headers=[\"*\"],\n)\n#AIPROXY_TOKEN = os.getenv(\"AIPROXY_TOKEN\")\nAIPROXY_TOKEN = os.getenv(\"AIPROXY_TOKEN\")\ndef cakebake(no_people: int, flavor: str):",
+    "text": "allow_credentials=True,\nallow_methods=[\"GET\", \"POST\"],\nallow_headers=[\"*\"],\n)\n#AIPROXY_TOKEN = os.getenv(\"AIPROXY_TOKEN\")\nAIPROXY_TOKEN = os.getenv(\"AIPROXY_TOKEN\")\ndef cakebake(no_people: int, flavor: str):\nreturn {\"message\": f\"Making a {flavor} cake for {no_people} people\"}\nbakecake = {\n\"type\": \"function\",",
     "source": "https://discourse.onlinedegree.iitm.ac.in/t/regarding-project1-for-file-not-detecting-after-sending-post-request/167172/8",
     "type": "discourse",
     "meta": {
@@ -12064,7 +11973,7 @@
     }
   },
   {
-    "text": "    return {\"message\": f\"Making a {flavor} cake for {no_people} people\"}\nbakecake = {\n    \"type\": \"function\",\n    \"function\": {\n        \"name\": \"cakebake\",\n        \"description\": \"Make a cake for all iitm students contain its emailids\",\n        \"parameters\": {\n            \"type\": \"object\",",
+    "text": "\"function\": {\n\"name\": \"cakebake\",\n\"description\": \"Make a cake for all iitm students contain its emailids\",\n\"parameters\": {\n\"type\": \"object\",\n\"properties\": {\n\"no_people\": {\n\"type\": \"integer\",\n\"description\": \"Number of people\"\n},\n\"flavor\": {\n\"type\": \"string\",\n\"description\": \"Flavor of the cake\"\n}\n},",
     "source": "https://discourse.onlinedegree.iitm.ac.in/t/regarding-project1-for-file-not-detecting-after-sending-post-request/167172/8",
     "type": "discourse",
     "meta": {
@@ -12077,7 +11986,7 @@
     }
   },
   {
-    "text": "            \"properties\": {\n                \"no_people\": {\n                    \"type\": \"integer\",\n                    \"description\": \"Number of people\"\n                },\n                \"flavor\": {\n                    \"type\": \"string\",\n                    \"description\": \"Flavor of the cake\"",
+    "text": "\"required\": [\"no_people\", \"flavor\"],\n\"additionalProperties\": False\n},\n\"strict\": True\n}\n}\ndef sort_contacts(contacts_file_path: str, output_file_path: str):\ntry:\ncontacts = pd.read_json(contacts_file_path)\ncontacts.sort_values([\"last_name\", \"first_name\"]).to_json(output_file_path, orient=\"records\")",
     "source": "https://discourse.onlinedegree.iitm.ac.in/t/regarding-project1-for-file-not-detecting-after-sending-post-request/167172/8",
     "type": "discourse",
     "meta": {
@@ -12090,7 +11999,7 @@
     }
   },
   {
-    "text": "                }\n            },\n            \"required\": [\"no_people\", \"flavor\"],\n            \"additionalProperties\": False\n        },\n        \"strict\": True\n    }\n}\ndef sort_contacts(contacts_file_path: str, output_file_path: str):\n    try:\n        contacts = pd.read_json(contacts_file_path)",
+    "text": "return {\"message\": f\"Contacts sorted and saved to {output_file_path}\"}\nexcept Exception as e:\nreturn {\"error\": f\"Failed to sort contacts: {str(e)}\"}\ntools = [bakecake, a1_tool, a2_tool, a3_tool, a4_tool, a5_tool, a6_tool, a7_tool, a8_tool, a9_tool, a10_tool]",
     "source": "https://discourse.onlinedegree.iitm.ac.in/t/regarding-project1-for-file-not-detecting-after-sending-post-request/167172/8",
     "type": "discourse",
     "meta": {
@@ -12103,7 +12012,7 @@
     }
   },
   {
-    "text": "        contacts.sort_values([\"last_name\", \"first_name\"]).to_json(output_file_path, orient=\"records\")\n        return {\"message\": f\"Contacts sorted and saved to {output_file_path}\"}\n    except Exception as e:\n        return {\"error\": f\"Failed to sort contacts: {str(e)}\"}",
+    "text": "def query_gpt(user_input: str, tools: list[dict] = tools) -> dict[str, Any]:\nresponse = requests.post(\nurl=\"https://aiproxy.sanand.workers.dev/openai/v1/chat/completions\",\nheaders={\n\"Content-Type\": \"application/json\",\n\"Authorization\": f\"Bearer {AIPROXY_TOKEN}\"\n},\njson={\n\"model\": \"gpt-4o-mini\",\n\"messages\": [\n{",
     "source": "https://discourse.onlinedegree.iitm.ac.in/t/regarding-project1-for-file-not-detecting-after-sending-post-request/167172/8",
     "type": "discourse",
     "meta": {
@@ -12116,7 +12025,7 @@
     }
   },
   {
-    "text": "tools = [bakecake, a1_tool, a2_tool, a3_tool, a4_tool, a5_tool, a6_tool, a7_tool, a8_tool, a9_tool, a10_tool]\ndef query_gpt(user_input: str, tools: list[dict] = tools) -> dict[str, Any]:\n    response = requests.post(\n        url=\"https://aiproxy.sanand.workers.dev/openai/v1/chat/completions\",",
+    "text": "\"role\": \"system\",\n\"content\": \"\"\"\nWhenever you receive a system directory location, always make it into a realtive path, for example adding a . before it would make it relative path, rest is on you to manage, I just want the relative path\"\"\"\n},\n{\n\"role\": \"user\",\n\"content\": user_input\n}\n],\n\"tools\": tools,",
     "source": "https://discourse.onlinedegree.iitm.ac.in/t/regarding-project1-for-file-not-detecting-after-sending-post-request/167172/8",
     "type": "discourse",
     "meta": {
@@ -12129,7 +12038,7 @@
     }
   },
   {
-    "text": "        headers={\n            \"Content-Type\": \"application/json\",\n            \"Authorization\": f\"Bearer {AIPROXY_TOKEN}\"\n        },\n        json={\n            \"model\": \"gpt-4o-mini\",\n            \"messages\": [\n                {\n                    \"role\": \"system\",\n                    \"content\": \"\"\"",
+    "text": "\"tool_choice\": \"auto\"\n}\n)\nreturn response.json()\n@app.get(\"/\")\ndef home():\nreturn {\"Hello\": \"World\"}\n@app.get(\"/read\")\ndef read_file(path: str):\ntry:\nwith open(path, \"r\") as f:\nreturn f.read()\nexcept Exception as e:\nraise HTTPException(status_code=404, detail=\"File does not exist\")\n@app.post(\"/run\")",
     "source": "https://discourse.onlinedegree.iitm.ac.in/t/regarding-project1-for-file-not-detecting-after-sending-post-request/167172/8",
     "type": "discourse",
     "meta": {
@@ -12142,7 +12051,7 @@
     }
   },
   {
-    "text": "                        Whenever you receive a system directory location, always make it into a realtive path, for example adding a . before it would make it relative path, rest is on you to manage, I just want the relative path\"\"\"\n                },\n                {",
+    "text": "async def run(task: str):\nquery = query_gpt(task)\nprint(query)  # Print the full response to inspect it.\nif 'choices' not in query:\nraise HTTPException(status_code=500, detail=\"Invalid response format from GPT API\")\ntry:\ntool_calls = query['choices'][0]['message'].get('tool_calls', [])\nif tool_calls:",
     "source": "https://discourse.onlinedegree.iitm.ac.in/t/regarding-project1-for-file-not-detecting-after-sending-post-request/167172/8",
     "type": "discourse",
     "meta": {
@@ -12155,7 +12064,7 @@
     }
   },
   {
-    "text": "                    \"role\": \"user\",\n                    \"content\": user_input\n                }\n            ],\n            \"tools\": tools,\n            \"tool_choice\": \"auto\"\n        }\n    )\n    return response.json()\n@app.get(\"/\")\ndef home():\n    return {\"Hello\": \"World\"}\n@app.get(\"/read\")",
+    "text": "func_name = tool_calls[0]['function']['name']\nargs = json.loads(tool_calls[0]['function']['arguments'])\n# Map function names to their respective functions\nfunction_map = {\n\"cakebake\": cakebake,\n\"install_uv_and_run_datagen\": install_uv_and_run_datagen,\n\"format_markdown_file\": format_markdown_file,",
     "source": "https://discourse.onlinedegree.iitm.ac.in/t/regarding-project1-for-file-not-detecting-after-sending-post-request/167172/8",
     "type": "discourse",
     "meta": {
@@ -12168,7 +12077,7 @@
     }
   },
   {
-    "text": "def read_file(path: str):\n    try:\n        with open(path, \"r\") as f:\n            return f.read()\n    except Exception as e:\n        raise HTTPException(status_code=404, detail=\"File does not exist\")\n@app.post(\"/run\")\nasync def run(task: str):\n    query = query_gpt(task)",
+    "text": "\"count_wednesdays\": count_wednesdays,\n\"sort_contacts\": sort_contacts,\n\"extract_recent_logs\": extract_recent_logs,\n\"create_markdown_index\": create_markdown_index,\n\"extract_sender_email\": extract_sender_email,\n\"extract_credit_card_number\": extract_credit_card_number,",
     "source": "https://discourse.onlinedegree.iitm.ac.in/t/regarding-project1-for-file-not-detecting-after-sending-post-request/167172/8",
     "type": "discourse",
     "meta": {
@@ -12181,7 +12090,7 @@
     }
   },
   {
-    "text": "    print(query)  # Print the full response to inspect it.\n    if 'choices' not in query:\n        raise HTTPException(status_code=500, detail=\"Invalid response format from GPT API\")\n    try:\n        tool_calls = query['choices'][0]['message'].get('tool_calls', [])\n        if tool_calls:",
+    "text": "\"find_similar_comments\": find_similar_comments,\n\"calculate_gold_ticket_sales\": calculate_gold_ticket_sales,\n}\nif func_name in function_map:\noutput = function_map[func_name](**args)\nelse:\nraise HTTPException(status_code=500, detail=\"Unknown function called\")\nelse:",
     "source": "https://discourse.onlinedegree.iitm.ac.in/t/regarding-project1-for-file-not-detecting-after-sending-post-request/167172/8",
     "type": "discourse",
     "meta": {
@@ -12194,7 +12103,7 @@
     }
   },
   {
-    "text": "            func_name = tool_calls[0]['function']['name']\n            args = json.loads(tool_calls[0]['function']['arguments'])\n            # Map function names to their respective functions\n            function_map = {\n                \"cakebake\": cakebake,",
+    "text": "raise HTTPException(status_code=500, detail=\"No function call found in response\")\nexcept KeyError as e:\nraise HTTPException(status_code=500, detail=f\"KeyError: Missing key in response - {str(e)}\")\nexcept Exception as e:",
     "source": "https://discourse.onlinedegree.iitm.ac.in/t/regarding-project1-for-file-not-detecting-after-sending-post-request/167172/8",
     "type": "discourse",
     "meta": {
@@ -12207,59 +12116,7 @@
     }
   },
   {
-    "text": "                \"install_uv_and_run_datagen\": install_uv_and_run_datagen,\n                \"format_markdown_file\": format_markdown_file,\n                \"count_wednesdays\": count_wednesdays,\n                \"sort_contacts\": sort_contacts,\n                \"extract_recent_logs\": extract_recent_logs,",
-    "source": "https://discourse.onlinedegree.iitm.ac.in/t/regarding-project1-for-file-not-detecting-after-sending-post-request/167172/8",
-    "type": "discourse",
-    "meta": {
-      "topic_title": "Regarding project1 for file not detecting after sending post request - Courses / Tools in Data Science - IITM-DSA",
-      "post_number": "8",
-      "username": "Sakshi6479",
-      "post_date": "Feb 14, 2025 11:18 pm",
-      "images": 1,
-      "code_blocks": 1
-    }
-  },
-  {
-    "text": "                \"create_markdown_index\": create_markdown_index,\n                \"extract_sender_email\": extract_sender_email,\n                \"extract_credit_card_number\": extract_credit_card_number,\n                \"find_similar_comments\": find_similar_comments,",
-    "source": "https://discourse.onlinedegree.iitm.ac.in/t/regarding-project1-for-file-not-detecting-after-sending-post-request/167172/8",
-    "type": "discourse",
-    "meta": {
-      "topic_title": "Regarding project1 for file not detecting after sending post request - Courses / Tools in Data Science - IITM-DSA",
-      "post_number": "8",
-      "username": "Sakshi6479",
-      "post_date": "Feb 14, 2025 11:18 pm",
-      "images": 1,
-      "code_blocks": 1
-    }
-  },
-  {
-    "text": "                \"calculate_gold_ticket_sales\": calculate_gold_ticket_sales,\n            }\n            if func_name in function_map:\n                output = function_map[func_name](**args)\n            else:\n                raise HTTPException(status_code=500, detail=\"Unknown function called\")",
-    "source": "https://discourse.onlinedegree.iitm.ac.in/t/regarding-project1-for-file-not-detecting-after-sending-post-request/167172/8",
-    "type": "discourse",
-    "meta": {
-      "topic_title": "Regarding project1 for file not detecting after sending post request - Courses / Tools in Data Science - IITM-DSA",
-      "post_number": "8",
-      "username": "Sakshi6479",
-      "post_date": "Feb 14, 2025 11:18 pm",
-      "images": 1,
-      "code_blocks": 1
-    }
-  },
-  {
-    "text": "        else:\n            raise HTTPException(status_code=500, detail=\"No function call found in response\")\n    except KeyError as e:\n        raise HTTPException(status_code=500, detail=f\"KeyError: Missing key in response - {str(e)}\")\n    except Exception as e:",
-    "source": "https://discourse.onlinedegree.iitm.ac.in/t/regarding-project1-for-file-not-detecting-after-sending-post-request/167172/8",
-    "type": "discourse",
-    "meta": {
-      "topic_title": "Regarding project1 for file not detecting after sending post request - Courses / Tools in Data Science - IITM-DSA",
-      "post_number": "8",
-      "username": "Sakshi6479",
-      "post_date": "Feb 14, 2025 11:18 pm",
-      "images": 1,
-      "code_blocks": 1
-    }
-  },
-  {
-    "text": "        raise HTTPException(status_code=500, detail=f\"Error processing the request: {str(e)}\")\n    return output\nif __name__ == \"__main__\":\n    import uvicorn\n    uvicorn.run(app, host=\"0.0.0.0\", port=8000)\nand also i am sending postman request as\nhttp://localhost:8000/run?task=The",
+    "text": "raise HTTPException(status_code=500, detail=f\"Error processing the request: {str(e)}\")\nreturn output\nif __name__ == \"__main__\":\nimport uvicorn\nuvicorn.run(app, host=\"0.0.0.0\", port=8000)\nand also i am sending postman request as\nhttp://localhost:8000/run?task=The",
     "source": "https://discourse.onlinedegree.iitm.ac.in/t/regarding-project1-for-file-not-detecting-after-sending-post-request/167172/8",
     "type": "discourse",
     "meta": {
@@ -12389,7 +12246,7 @@
     }
   },
   {
-    "text": "Collecting uv\n  Downloading uv-0.6.0-py3-none-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (11 kB)\nDownloading uv-0.6.0-py3-none-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (16.3 MB)\n   \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 16.3/16.3 MB 3.2 MB/s eta 0:00:00",
+    "text": "Collecting uv\nDownloading uv-0.6.0-py3-none-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (11 kB)\nDownloading uv-0.6.0-py3-none-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (16.3 MB)\n\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 16.3/16.3 MB 3.2 MB/s eta 0:00:00\nInstalling collected packages: uv",
     "source": "https://discourse.onlinedegree.iitm.ac.in/t/regarding-project1-for-file-not-detecting-after-sending-post-request/167172/14",
     "type": "discourse",
     "meta": {
@@ -12402,7 +12259,7 @@
     }
   },
   {
-    "text": "Installing collected packages: uv\nSuccessfully installed uv-0.6.0\npython: can't open file '/home/sakshi-tds/tds_project1/https://raw.githubusercontent.com/sanand0/tools-in-data-science-public/tds-2025-01/project-1/datagen.py': [Errno 2] No such file or directory",
+    "text": "Successfully installed uv-0.6.0\npython: can't open file '/home/sakshi-tds/tds_project1/https://raw.githubusercontent.com/sanand0/tools-in-data-science-public/tds-2025-01/project-1/datagen.py': [Errno 2] No such file or directory",
     "source": "https://discourse.onlinedegree.iitm.ac.in/t/regarding-project1-for-file-not-detecting-after-sending-post-request/167172/14",
     "type": "discourse",
     "meta": {
@@ -12467,7 +12324,7 @@
     }
   },
   {
-    "text": "@23f30007561\n@adi3\nIt has been released. Thanks for keeping us on our toes\nhttps://tds.s-anand.net/#/project-1\nProject 1 - LLM-based Automation Agent - Discussion Thread [TDS Jan 2025]\nTools in Data Science\nPlease post any questions related to\nProject 1 - LLM-based Automation Agent\n. ",
+    "text": "@23f30007561\n@adi3\nIt has been released. Thanks for keeping us on our toes\nhttps://tds.s-anand.net/#/project-1\nProject 1 - LLM-based Automation Agent - Discussion Thread [TDS Jan 2025]\nTools in Data Science\nPlease post any questions related to\nProject 1 - LLM-based Automation Agent\n.",
     "source": "https://discourse.onlinedegree.iitm.ac.in/t/tds-project-1-release-information-required/164214/3/3",
     "type": "discourse",
     "meta": {
@@ -13156,7 +13013,7 @@
     }
   },
   {
-    "text": "from\nfastapi\nimport\nFastAPI, Query\nfrom\nfastapi.middleware.cors\nimport\nCORSMiddleware\nfrom\ntyping\nimport\nList\n,\nOptional\nimport\ncsv\napp = FastAPI()\n# Enable CORS\napp.add_middleware(\n    CORSMiddleware,\n    allow_origins=[\n\"*\"\n],\n# Allow all origins\nallow_credentials=\nTrue\n,\n    allow_methods=[\n\"*\"\n],\n# Allow all methods",
+    "text": "from\nfastapi\nimport\nFastAPI, Query\nfrom\nfastapi.middleware.cors\nimport\nCORSMiddleware\nfrom\ntyping\nimport\nList\n,\nOptional\nimport\ncsv\napp = FastAPI()\n# Enable CORS\napp.add_middleware(\nCORSMiddleware,\nallow_origins=[\n\"*\"\n],\n# Allow all origins\nallow_credentials=\nTrue\n,\nallow_methods=[\n\"*\"\n],\n# Allow all methods\nallow_headers=[\n\"*\"\n],",
     "source": "https://discourse.onlinedegree.iitm.ac.in/t/ga2-deployment-tools-discussion-thread-tds-jan-2025/161120/3/13",
     "type": "discourse",
     "meta": {
@@ -13169,7 +13026,7 @@
     }
   },
   {
-    "text": "allow_headers=[\n\"*\"\n],\n# Allow all headers\n)\n# Load student data from the specified CSV file\nstudents = []\nwith\nopen\n(\n'/Users/mish/Downloads/q-fastapi.csv'\n, mode=\n'r'\n)\nas\nfile:\n    reader = csv.DictReader(file)\nfor\nrow\nin\nreader:\n        students.append({\n\"studentId\"\n:\nint\n(row[\n\"studentId\"\n]),\n\"class\"\n: row[\n\"class\"\n]",
+    "text": "# Allow all headers\n)\n# Load student data from the specified CSV file\nstudents = []\nwith\nopen\n(\n'/Users/mish/Downloads/q-fastapi.csv'\n, mode=\n'r'\n)\nas\nfile:\nreader = csv.DictReader(file)\nfor\nrow\nin\nreader:\nstudents.append({\n\"studentId\"\n:\nint\n(row[\n\"studentId\"\n]),\n\"class\"\n: row[\n\"class\"\n]\n})\n@app.get(\n\"/api\"\n)\nasync\ndef\nget_students\n(",
     "source": "https://discourse.onlinedegree.iitm.ac.in/t/ga2-deployment-tools-discussion-thread-tds-jan-2025/161120/3/13",
     "type": "discourse",
     "meta": {
@@ -13182,7 +13039,7 @@
     }
   },
   {
-    "text": "        })\n@app.get(\n\"/api\"\n)\nasync\ndef\nget_students\n(\nclass_:\nOptional\n[\nList\n[\nstr\n]] = Query(\nNone\n)\n):\nprint\n(\nf\"Requested classes:\n{class_}\n\"\n)\n# Debugging line\nif\nclass_:\n        filtered_students = [student\nfor\nstudent\nin\nstudents\nif\nstudent[\n\"class\"\n]\nin\nclass_]\nprint\n(\nf\"Filtered students:\n{filtered_students}\n\"\n)\n# Debugging line",
+    "text": "class_:\nOptional\n[\nList\n[\nstr\n]] = Query(\nNone\n)\n):\nprint\n(\nf\"Requested classes:\n{class_}\n\"\n)\n# Debugging line\nif\nclass_:\nfiltered_students = [student\nfor\nstudent\nin\nstudents\nif\nstudent[\n\"class\"\n]\nin\nclass_]\nprint\n(\nf\"Filtered students:\n{filtered_students}\n\"\n)\n# Debugging line\nreturn\n{\n\"students\"\n: filtered_students}\nreturn\n{\n\"students\"",
     "source": "https://discourse.onlinedegree.iitm.ac.in/t/ga2-deployment-tools-discussion-thread-tds-jan-2025/161120/3/13",
     "type": "discourse",
     "meta": {
@@ -13195,7 +13052,7 @@
     }
   },
   {
-    "text": "return\n{\n\"students\"\n: filtered_students}\nreturn\n{\n\"students\"\n: students}\nif\n__name__ ==\n\"__main__\"\n:\nimport\nuvicorn\n    uvicorn.run(app, host=\n\"127.0.0.1\"\n, port=\n8000\n)",
+    "text": ": students}\nif\n__name__ ==\n\"__main__\"\n:\nimport\nuvicorn\nuvicorn.run(app, host=\n\"127.0.0.1\"\n, port=\n8000\n)",
     "source": "https://discourse.onlinedegree.iitm.ac.in/t/ga2-deployment-tools-discussion-thread-tds-jan-2025/161120/3/13",
     "type": "discourse",
     "meta": {
@@ -13455,7 +13312,7 @@
     }
   },
   {
-    "text": "from fastapi import FastAPI, HTTPException\nfrom pydantic import BaseModel\nfrom sentence_transformers import util\nfrom fastapi.middleware.cors import CORSMiddleware\nfrom typing import List\n# Create FastAPI app\napp = FastAPI()\n# Enable CORS\napp.add_middleware(\n    CORSMiddleware,",
+    "text": "from fastapi import FastAPI, HTTPException\nfrom pydantic import BaseModel\nfrom sentence_transformers import util\nfrom fastapi.middleware.cors import CORSMiddleware\nfrom typing import List\n# Create FastAPI app\napp = FastAPI()\n# Enable CORS\napp.add_middleware(\nCORSMiddleware,",
     "source": "https://discourse.onlinedegree.iitm.ac.in/t/doubts-in-q7-q8/166357/1/1",
     "type": "discourse",
     "meta": {
@@ -13468,7 +13325,7 @@
     }
   },
   {
-    "text": "    allow_origins=[\"*\"],  # Allow all origins\n    allow_credentials=True,\n    allow_methods=[\"OPTIONS\", \"POST\"],  # Allow OPTIONS and POST\n    allow_headers=[\"*\"],  # Allow all headers\n)\n# Pydantic model to parse incoming data\nclass SimilarityRequest(BaseModel):\n    docs: List[str]\n    query: str",
+    "text": "allow_origins=[\"*\"],  # Allow all origins\nallow_credentials=True,\nallow_methods=[\"OPTIONS\", \"POST\"],  # Allow OPTIONS and POST\nallow_headers=[\"*\"],  # Allow all headers\n)\n# Pydantic model to parse incoming data\nclass SimilarityRequest(BaseModel):\ndocs: List[str]\nquery: str\n# OpenAI API key and URL",
     "source": "https://discourse.onlinedegree.iitm.ac.in/t/doubts-in-q7-q8/166357/1/1",
     "type": "discourse",
     "meta": {
@@ -13481,7 +13338,7 @@
     }
   },
   {
-    "text": "# OpenAI API key and URL\nAPI_URL = \"https://aiproxy.sanand.workers.dev/openai/v1/embeddings\"\nAPI_KEY = \"enter your key\"  # Replace with your actual API key\ndef get_embeddings(docs: List[str]) -> List[List[float]]:\n    \"\"\"Retrieve embeddings for a list of documents from OpenAI's API.\"\"\"\n    headers = {",
+    "text": "API_URL = \"https://aiproxy.sanand.workers.dev/openai/v1/embeddings\"\nAPI_KEY = \"enter your key\"  # Replace with your actual API key\ndef get_embeddings(docs: List[str]) -> List[List[float]]:\n\"\"\"Retrieve embeddings for a list of documents from OpenAI's API.\"\"\"\nheaders = {\n\"Content-Type\": \"application/json\",",
     "source": "https://discourse.onlinedegree.iitm.ac.in/t/doubts-in-q7-q8/166357/1/1",
     "type": "discourse",
     "meta": {
@@ -13494,7 +13351,7 @@
     }
   },
   {
-    "text": "        \"Content-Type\": \"application/json\",\n        \"Authorization\": f\"Bearer {API_KEY}\",\n    }\n    data = {\n        \"model\": \"text-embedding-3-small\",  # Use the correct model\n        \"input\": docs\n    }\n    response = requests.post(API_URL, json=data, headers=headers)\n    if response.status_code != 200:",
+    "text": "\"Authorization\": f\"Bearer {API_KEY}\",\n}\ndata = {\n\"model\": \"text-embedding-3-small\",  # Use the correct model\n\"input\": docs\n}\nresponse = requests.post(API_URL, json=data, headers=headers)\nif response.status_code != 200:\nraise HTTPException(status_code=response.status_code, detail=\"API request failed\")",
     "source": "https://discourse.onlinedegree.iitm.ac.in/t/doubts-in-q7-q8/166357/1/1",
     "type": "discourse",
     "meta": {
@@ -13507,7 +13364,7 @@
     }
   },
   {
-    "text": "        raise HTTPException(status_code=response.status_code, detail=\"API request failed\")\n    response_data = response.json()\n    if 'data' not in response_data:\n        raise KeyError(\"Missing 'data' field in API response\")\n    return [embedding['embedding'] for embedding in response_data['data']]",
+    "text": "response_data = response.json()\nif 'data' not in response_data:\nraise KeyError(\"Missing 'data' field in API response\")\nreturn [embedding['embedding'] for embedding in response_data['data']]\n@app.post(\"/similarity\")\nasync def similarity(request: SimilarityRequest):\n# Get embeddings for docs and query",
     "source": "https://discourse.onlinedegree.iitm.ac.in/t/doubts-in-q7-q8/166357/1/1",
     "type": "discourse",
     "meta": {
@@ -13520,7 +13377,7 @@
     }
   },
   {
-    "text": "@app.post(\"/similarity\")\nasync def similarity(request: SimilarityRequest):\n    # Get embeddings for docs and query\n    docs = request.docs\n    query = request.query\n    # Get embeddings for the documents and query\n    all_docs = docs + [query]  # Combine documents and query into one list",
+    "text": "docs = request.docs\nquery = request.query\n# Get embeddings for the documents and query\nall_docs = docs + [query]  # Combine documents and query into one list\nembeddings = get_embeddings(all_docs)  # Get embeddings from OpenAI API\ndoc_embeddings = embeddings[:-1]  # All embeddings except for the query",
     "source": "https://discourse.onlinedegree.iitm.ac.in/t/doubts-in-q7-q8/166357/1/1",
     "type": "discourse",
     "meta": {
@@ -13533,7 +13390,7 @@
     }
   },
   {
-    "text": "    embeddings = get_embeddings(all_docs)  # Get embeddings from OpenAI API\n    doc_embeddings = embeddings[:-1]  # All embeddings except for the query\n    query_embedding = embeddings[-1]  # The last embedding is for the query\n    # Calculate cosine similarities",
+    "text": "query_embedding = embeddings[-1]  # The last embedding is for the query\n# Calculate cosine similarities\nsimilarities = util.cos_sim(query_embedding, doc_embeddings)[0].cpu().numpy()\n# Sort documents by similarity (highest first)",
     "source": "https://discourse.onlinedegree.iitm.ac.in/t/doubts-in-q7-q8/166357/1/1",
     "type": "discourse",
     "meta": {
@@ -13546,7 +13403,7 @@
     }
   },
   {
-    "text": "    similarities = util.cos_sim(query_embedding, doc_embeddings)[0].cpu().numpy()\n    # Sort documents by similarity (highest first)\n    sorted_docs = sorted(zip(docs, similarities), key=lambda x: x[1], reverse=True)\n    # Return the top 3 most similar documents",
+    "text": "sorted_docs = sorted(zip(docs, similarities), key=lambda x: x[1], reverse=True)\n# Return the top 3 most similar documents\ntop_matches = [doc for doc, _ in sorted_docs[:3]]\nreturn {\"matches\": top_matches}\nfor Q8\nfrom fastapi import FastAPI\nfrom fastapi.responses import JSONResponse",
     "source": "https://discourse.onlinedegree.iitm.ac.in/t/doubts-in-q7-q8/166357/1/1",
     "type": "discourse",
     "meta": {
@@ -13559,7 +13416,7 @@
     }
   },
   {
-    "text": "    top_matches = [doc for doc, _ in sorted_docs[:3]]\n    return {\"matches\": top_matches}\nfor Q8\nfrom fastapi import FastAPI\nfrom fastapi.responses import JSONResponse\nfrom fastapi.middleware.cors import CORSMiddleware\nfrom typing import Dict, Any\nimport re\n# Create the FastAPI app\napp = FastAPI()",
+    "text": "from fastapi.middleware.cors import CORSMiddleware\nfrom typing import Dict, Any\nimport re\n# Create the FastAPI app\napp = FastAPI()\n# CORS configuration to allow any origin\napp.add_middleware(\nCORSMiddleware,\nallow_origins=[\"*\"],  # Allows all origins\nallow_credentials=True,",
     "source": "https://discourse.onlinedegree.iitm.ac.in/t/doubts-in-q7-q8/166357/1/1",
     "type": "discourse",
     "meta": {
@@ -13572,7 +13429,7 @@
     }
   },
   {
-    "text": "# CORS configuration to allow any origin\napp.add_middleware(\n    CORSMiddleware,\n    allow_origins=[\"*\"],  # Allows all origins\n    allow_credentials=True,\n    allow_methods=[\"*\"],  # Allows all methods (GET, POST, etc.)\n    allow_headers=[\"*\"],  # Allows all headers\n)",
+    "text": "allow_methods=[\"*\"],  # Allows all methods (GET, POST, etc.)\nallow_headers=[\"*\"],  # Allows all headers\n)\ndef get_ticket_status(ticket_id: int) -> Dict[str, Any]:\n# Mock response for illustration purposes\nreturn {\"ticket_id\": ticket_id, \"status\": \"open\"}",
     "source": "https://discourse.onlinedegree.iitm.ac.in/t/doubts-in-q7-q8/166357/1/1",
     "type": "discourse",
     "meta": {
@@ -13585,7 +13442,7 @@
     }
   },
   {
-    "text": "def get_ticket_status(ticket_id: int) -> Dict[str, Any]:\n    # Mock response for illustration purposes\n    return {\"ticket_id\": ticket_id, \"status\": \"open\"}\ndef schedule_meeting(date: str, time: str, meeting_room: str) -> Dict[str, Any]:\n    # Mock response for illustration purposes",
+    "text": "def schedule_meeting(date: str, time: str, meeting_room: str) -> Dict[str, Any]:\n# Mock response for illustration purposes\nreturn {\"date\": date, \"time\": time, \"meeting_room\": meeting_room, \"status\": \"scheduled\"}\ndef get_expense_balance(employee_id: int) -> Dict[str, Any]:",
     "source": "https://discourse.onlinedegree.iitm.ac.in/t/doubts-in-q7-q8/166357/1/1",
     "type": "discourse",
     "meta": {
@@ -13598,7 +13455,7 @@
     }
   },
   {
-    "text": "    return {\"date\": date, \"time\": time, \"meeting_room\": meeting_room, \"status\": \"scheduled\"}\ndef get_expense_balance(employee_id: int) -> Dict[str, Any]:\n    # Mock response for illustration purposes\n    return {\"employee_id\": employee_id, \"balance\": 1000.0}",
+    "text": "# Mock response for illustration purposes\nreturn {\"employee_id\": employee_id, \"balance\": 1000.0}\ndef calculate_performance_bonus(employee_id: int, current_year: int) -> Dict[str, Any]:\n# Mock response for illustration purposes",
     "source": "https://discourse.onlinedegree.iitm.ac.in/t/doubts-in-q7-q8/166357/1/1",
     "type": "discourse",
     "meta": {
@@ -13611,7 +13468,7 @@
     }
   },
   {
-    "text": "def calculate_performance_bonus(employee_id: int, current_year: int) -> Dict[str, Any]:\n    # Mock response for illustration purposes\n    return {\"employee_id\": employee_id, \"current_year\": current_year, \"bonus\": 500.0}\ndef report_office_issue(issue_code: int, department: str) -> Dict[str, Any]:",
+    "text": "return {\"employee_id\": employee_id, \"current_year\": current_year, \"bonus\": 500.0}\ndef report_office_issue(issue_code: int, department: str) -> Dict[str, Any]:\n# Mock response for illustration purposes\nreturn {\"issue_code\": issue_code, \"department\": department, \"status\": \"reported\"}\nimport re",
     "source": "https://discourse.onlinedegree.iitm.ac.in/t/doubts-in-q7-q8/166357/1/1",
     "type": "discourse",
     "meta": {
@@ -13624,7 +13481,7 @@
     }
   },
   {
-    "text": "    # Mock response for illustration purposes\n    return {\"issue_code\": issue_code, \"department\": department, \"status\": \"reported\"}\nimport re\ndef extract_parameters(query: str) -> Dict[str, Any]:\n    \"\"\"Extract parameters from the query string.\"\"\"",
+    "text": "def extract_parameters(query: str) -> Dict[str, Any]:\n\"\"\"Extract parameters from the query string.\"\"\"\n# Convert the query to lowercase for case-insensitive matching\nquery = query.strip().lower()\nif match := re.match(r\"what is the status of ticket (\\d+)\\?\", query):\nreturn {\n\"name\": \"get_ticket_status\",",
     "source": "https://discourse.onlinedegree.iitm.ac.in/t/doubts-in-q7-q8/166357/1/1",
     "type": "discourse",
     "meta": {
@@ -13637,7 +13494,7 @@
     }
   },
   {
-    "text": "    # Convert the query to lowercase for case-insensitive matching\n    query = query.strip().lower()\n    if match := re.match(r\"what is the status of ticket (\\d+)\\?\", query):\n        return {\n            \"name\": \"get_ticket_status\",\n            \"arguments\": {\"ticket_id\": int(match.group(1))}\n        }",
+    "text": "\"arguments\": {\"ticket_id\": int(match.group(1))}\n}\nelif match := re.match(r\"schedule a meeting on (\\d{4}-\\d{2}-\\d{2}) at (\\d{2}:\\d{2}) in (.+)\\.\", query):\nreturn {\n\"name\": \"schedule_meeting\",\n\"arguments\": {\n\"date\": match.group(1),\n\"time\": match.group(2),\n\"meeting_room\": match.group(3)\n}\n}",
     "source": "https://discourse.onlinedegree.iitm.ac.in/t/doubts-in-q7-q8/166357/1/1",
     "type": "discourse",
     "meta": {
@@ -13650,7 +13507,7 @@
     }
   },
   {
-    "text": "    elif match := re.match(r\"schedule a meeting on (\\d{4}-\\d{2}-\\d{2}) at (\\d{2}:\\d{2}) in (.+)\\.\", query):\n        return {\n            \"name\": \"schedule_meeting\",\n            \"arguments\": {\n                \"date\": match.group(1),\n                \"time\": match.group(2),",
+    "text": "elif match := re.match(r\"show my expense balance for employee (\\d+)\\.\", query):\nreturn {\n\"name\": \"get_expense_balance\",\n\"arguments\": {\"employee_id\": int(match.group(1))}\n}\nelif match := re.match(r\"calculate performance bonus for employee (\\d+) for (\\d{4})\\.\", query):\nreturn {",
     "source": "https://discourse.onlinedegree.iitm.ac.in/t/doubts-in-q7-q8/166357/1/1",
     "type": "discourse",
     "meta": {
@@ -13663,7 +13520,7 @@
     }
   },
   {
-    "text": "                \"meeting_room\": match.group(3)\n            }\n        }\n    elif match := re.match(r\"show my expense balance for employee (\\d+)\\.\", query):\n        return {\n            \"name\": \"get_expense_balance\",\n            \"arguments\": {\"employee_id\": int(match.group(1))}\n        }",
+    "text": "\"name\": \"calculate_performance_bonus\",\n\"arguments\": {\n\"employee_id\": int(match.group(1)),\n\"current_year\": int(match.group(2))\n}\n}\nelif match := re.match(r\"report office issue (\\d+) for the (\\w+) department\\.\", query):\nreturn {\n\"name\": \"report_office_issue\",\n\"arguments\": {\n\"issue_code\": int(match.group(1)),",
     "source": "https://discourse.onlinedegree.iitm.ac.in/t/doubts-in-q7-q8/166357/1/1",
     "type": "discourse",
     "meta": {
@@ -13676,7 +13533,7 @@
     }
   },
   {
-    "text": "    elif match := re.match(r\"calculate performance bonus for employee (\\d+) for (\\d{4})\\.\", query):\n        return {\n            \"name\": \"calculate_performance_bonus\",\n            \"arguments\": {\n                \"employee_id\": int(match.group(1)),\n                \"current_year\": int(match.group(2))",
+    "text": "\"department\": match.group(2)\n}\n}\nreturn {}\n@app.get(\"/execute\")\nasync def execute_query(q: str):\n# Extract the function name and arguments from the query\nresult = extract_parameters(q)\nif not result:\nreturn JSONResponse(content={\"error\": \"No matching function found for the query\"}, status_code=400)",
     "source": "https://discourse.onlinedegree.iitm.ac.in/t/doubts-in-q7-q8/166357/1/1",
     "type": "discourse",
     "meta": {
@@ -13689,7 +13546,7 @@
     }
   },
   {
-    "text": "            }\n        }\n    elif match := re.match(r\"report office issue (\\d+) for the (\\w+) department\\.\", query):\n        return {\n            \"name\": \"report_office_issue\",\n            \"arguments\": {\n                \"issue_code\": int(match.group(1)),\n                \"department\": match.group(2)",
+    "text": "# Call the respective function\nfunc_name = result[\"name\"]\narguments = result[\"arguments\"]\n# Call the function dynamically based on func_name\nif func_name == \"get_ticket_status\":\nresponse = get_ticket_status(**arguments)\nelif func_name == \"schedule_meeting\":\nresponse = schedule_meeting(**arguments)",
     "source": "https://discourse.onlinedegree.iitm.ac.in/t/doubts-in-q7-q8/166357/1/1",
     "type": "discourse",
     "meta": {
@@ -13702,7 +13559,7 @@
     }
   },
   {
-    "text": "            }\n        }\n    return {}\n@app.get(\"/execute\")\nasync def execute_query(q: str):\n    # Extract the function name and arguments from the query\n    result = extract_parameters(q)\n    if not result:",
+    "text": "elif func_name == \"get_expense_balance\":\nresponse = get_expense_balance(**arguments)\nelif func_name == \"calculate_performance_bonus\":\nresponse = calculate_performance_bonus(**arguments)\nelif func_name == \"report_office_issue\":\nresponse = report_office_issue(**arguments)",
     "source": "https://discourse.onlinedegree.iitm.ac.in/t/doubts-in-q7-q8/166357/1/1",
     "type": "discourse",
     "meta": {
@@ -13715,33 +13572,7 @@
     }
   },
   {
-    "text": "        return JSONResponse(content={\"error\": \"No matching function found for the query\"}, status_code=400)\n    # Call the respective function\n    func_name = result[\"name\"]\n    arguments = result[\"arguments\"]\n    # Call the function dynamically based on func_name\n    if func_name == \"get_ticket_status\":",
-    "source": "https://discourse.onlinedegree.iitm.ac.in/t/doubts-in-q7-q8/166357/1/1",
-    "type": "discourse",
-    "meta": {
-      "topic_title": "Doubts in Q7, Q8 - Courses / Tools in Data Science - IITM-DSA",
-      "post_number": "1",
-      "username": "Sakshi6479",
-      "post_date": "Feb 5, 2025 10:27 pm",
-      "images": 1,
-      "code_blocks": 2
-    }
-  },
-  {
-    "text": "        response = get_ticket_status(**arguments)\n    elif func_name == \"schedule_meeting\":\n        response = schedule_meeting(**arguments)\n    elif func_name == \"get_expense_balance\":\n        response = get_expense_balance(**arguments)\n    elif func_name == \"calculate_performance_bonus\":",
-    "source": "https://discourse.onlinedegree.iitm.ac.in/t/doubts-in-q7-q8/166357/1/1",
-    "type": "discourse",
-    "meta": {
-      "topic_title": "Doubts in Q7, Q8 - Courses / Tools in Data Science - IITM-DSA",
-      "post_number": "1",
-      "username": "Sakshi6479",
-      "post_date": "Feb 5, 2025 10:27 pm",
-      "images": 1,
-      "code_blocks": 2
-    }
-  },
-  {
-    "text": "        response = calculate_performance_bonus(**arguments)\n    elif func_name == \"report_office_issue\":\n        response = report_office_issue(**arguments)\n    # Return the response in the requested format\n    return JSONResponse(content={\"name\": func_name, \"arguments\": arguments}, status_code=200)",
+    "text": "# Return the response in the requested format\nreturn JSONResponse(content={\"name\": func_name, \"arguments\": arguments}, status_code=200)",
     "source": "https://discourse.onlinedegree.iitm.ac.in/t/doubts-in-q7-q8/166357/1/1",
     "type": "discourse",
     "meta": {
@@ -14105,7 +13936,7 @@
     }
   },
   {
-    "text": "@Thinesh\n@23f1002223\n@22f3001365\n@Anshuman_Dave\nGraded assignment 1 - Submission not shown\nTools in Data Science\n@Muthupalaniappan\nIt is saying you did not attempt it because you did not answer the seek portal question. ",
+    "text": "@Thinesh\n@23f1002223\n@22f3001365\n@Anshuman_Dave\nGraded assignment 1 - Submission not shown\nTools in Data Science\n@Muthupalaniappan\nIt is saying you did not attempt it because you did not answer the seek portal question.",
     "source": "https://discourse.onlinedegree.iitm.ac.in/t/graded-assignment-1-submission-not-shown/165396/2/16",
     "type": "discourse",
     "meta": {
@@ -14118,7 +13949,7 @@
     }
   },
   {
-    "text": "You are not graded on the seek portal question. It only exists to make sure you saw the GA and attempted it. You are only graded on your submission of GA1 on the actual assignment page where your last saved submission is used for grading. \nKind regards\nPlease refer to this post.\nKind regards",
+    "text": "You are not graded on the seek portal question. It only exists to make sure you saw the GA and attempted it. You are only graded on your submission of GA1 on the actual assignment page where your last saved submission is used for grading.\nKind regards\nPlease refer to this post.\nKind regards",
     "source": "https://discourse.onlinedegree.iitm.ac.in/t/graded-assignment-1-submission-not-shown/165396/2/16",
     "type": "discourse",
     "meta": {
@@ -14599,7 +14430,7 @@
     }
   },
   {
-    "text": "Likewise the GAs also are available through the links in the seek portal as well as on the course domain shared above. \nThe course introduction has very important information. Many students who faced problems in Tools for Data Science in previous terms usually never read the intro. Please be dilig\u2026",
+    "text": "Likewise the GAs also are available through the links in the seek portal as well as on the course domain shared above.\nThe course introduction has very important information. Many students who faced problems in Tools for Data Science in previous terms usually never read the intro. Please be dilig\u2026",
     "source": "https://discourse.onlinedegree.iitm.ac.in/t/tds-jan-2025-calender-accesss-and-video-lecture-access-in-portal/163158/6",
     "type": "discourse",
     "meta": {
@@ -14989,7 +14820,7 @@
     }
   },
   {
-    "text": "@24f2006531\n@GaURaVinDeX\n@shubham6\nPlease check this fix. It may solve your problem.\nGA1 - Development Tools - Discussion Thread [TDS Jan 2025]\nTools in Data Science\n@23f2005067\n@23f2003751\nI added a \u201cRecent saves\u201d feature. ",
+    "text": "@24f2006531\n@GaURaVinDeX\n@shubham6\nPlease check this fix. It may solve your problem.\nGA1 - Development Tools - Discussion Thread [TDS Jan 2025]\nTools in Data Science\n@23f2005067\n@23f2003751\nI added a \u201cRecent saves\u201d feature.",
     "source": "https://discourse.onlinedegree.iitm.ac.in/t/score-keeps-resetting-to-0/163765/7",
     "type": "discourse",
     "meta": {
@@ -15002,7 +14833,7 @@
     }
   },
   {
-    "text": "This will show the time and score for the last 3 times you saved. You can load from any of these.\n[image]\nDo remember to click the \u201cCheck\u201d button to calculate your score. That is not automatic. \nPlease check this out and let me know if there are any bugs. Thanks.",
+    "text": "This will show the time and score for the last 3 times you saved. You can load from any of these.\n[image]\nDo remember to click the \u201cCheck\u201d button to calculate your score. That is not automatic.\nPlease check this out and let me know if there are any bugs. Thanks.",
     "source": "https://discourse.onlinedegree.iitm.ac.in/t/score-keeps-resetting-to-0/163765/7",
     "type": "discourse",
     "meta": {
@@ -15855,7 +15686,7 @@
     }
   },
   {
-    "text": "Gemini 2.0 Flash Lite\nvia\nOpenRouter\nfor chat completions and\nText Embedding 3 Small\nvia\nOpenAI\nfor embeddings:\ncurl\nhttps://aipipe.org/openrouter/v1/chat/completions\n\\\n-H\n\"Content-Type: application/json\"\n\\\n-H\n\"Authorization: Bearer\n$AIPIPE_TOKEN\n\"\n\\\n-d\n'{\n    \"model\": \"google/gemini-2.0-flash-lite-001\",",
+    "text": "Gemini 2.0 Flash Lite\nvia\nOpenRouter\nfor chat completions and\nText Embedding 3 Small\nvia\nOpenAI\nfor embeddings:\ncurl\nhttps://aipipe.org/openrouter/v1/chat/completions\n\\\n-H\n\"Content-Type: application/json\"\n\\\n-H\n\"Authorization: Bearer\n$AIPIPE_TOKEN\n\"\n\\\n-d\n'{\n\"model\": \"google/gemini-2.0-flash-lite-001\",",
     "source": "https://tds.s-anand.net/#https://tds.s-anand.net/#/large-language-models",
     "type": "course",
     "meta": {
@@ -15866,7 +15697,7 @@
     }
   },
   {
-    "text": "    \"messages\": [{ \"role\": \"user\", \"content\": \"What is 2 + 2?\"} }]\n  }'\ncurl\nhttps://aipipe.org/openai/v1/embeddings\n\\\n-H\n\"Content-Type: application/json\"\n\\\n-H\n\"Authorization: Bearer\n$AIPIPE_TOKEN\n\"\n\\\n-d\n'{ \"model\": \"text-embedding-3-small\", \"input\": \"What is 2 + 2?\" }'\nCopy to clipboard\nError\nCopied\nOr using\nllm\n:",
+    "text": "\"messages\": [{ \"role\": \"user\", \"content\": \"What is 2 + 2?\"} }]\n}'\ncurl\nhttps://aipipe.org/openai/v1/embeddings\n\\\n-H\n\"Content-Type: application/json\"\n\\\n-H\n\"Authorization: Bearer\n$AIPIPE_TOKEN\n\"\n\\\n-d\n'{ \"model\": \"text-embedding-3-small\", \"input\": \"What is 2 + 2?\" }'\nCopy to clipboard\nError\nCopied\nOr using\nllm\n:\nllm keys",
     "source": "https://tds.s-anand.net/#https://tds.s-anand.net/#/large-language-models",
     "type": "course",
     "meta": {
@@ -15877,7 +15708,7 @@
     }
   },
   {
-    "text": "llm keys\nset\nopenai\n--value\n$AIPIPE_TOKEN\nexport\nOPENAI_BASE_URL\n=\nhttps://aipipe.org/openrouter/v1\nllm\n'What is 2 + 2?'\n-m\nopenrouter/google/gemini-2.0-flash-lite-001\nexport\nOPENAI_BASE_URL\n=\nhttps://aipipe.org/openai/v1\nllm embed\n-c\n'What is 2 + 2'\n-m\n3\n-small\nCopy to clipboard\nError\nCopied\nFor a 50% discount",
+    "text": "set\nopenai\n--value\n$AIPIPE_TOKEN\nexport\nOPENAI_BASE_URL\n=\nhttps://aipipe.org/openrouter/v1\nllm\n'What is 2 + 2?'\n-m\nopenrouter/google/gemini-2.0-flash-lite-001\nexport\nOPENAI_BASE_URL\n=\nhttps://aipipe.org/openai/v1\nllm embed\n-c\n'What is 2 + 2'\n-m\n3\n-small\nCopy to clipboard\nError\nCopied\nFor a 50% discount",
     "source": "https://tds.s-anand.net/#https://tds.s-anand.net/#/large-language-models",
     "type": "course",
     "meta": {
